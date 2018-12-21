@@ -10,11 +10,15 @@ using System.Windows.Forms;
 
 namespace EvenTheTeams
 {
-    public partial class Form1 : Form
+    public partial class ResultForm : Form
     {
-        public Form1()
+        public ResultForm()
         {
             InitializeComponent();
+        }
+
+        private void buttonMoveTo2_Click(object sender, EventArgs e)
+        {
         }
     }
 }
