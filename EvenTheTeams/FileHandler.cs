@@ -17,7 +17,7 @@ namespace EvenTheTeams
             {
                 Random random = new Random();
                 const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ";
-                string name = new string(Enumerable.Repeat(chars, 10.Select(s => s[random.Next(s.Length)]).ToArray());
+                string name = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray());
                 Ranking ranking = new Ranking(random.Next(20), random.Next(20), random.Next(20));
                 players[a] = new Player(name, ranking);
             }
