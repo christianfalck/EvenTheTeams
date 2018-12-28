@@ -82,6 +82,7 @@
             this.buttonLoad.TabIndex = 2;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // labelPath
             // 
@@ -119,20 +120,22 @@
             // labelHeadings
             // 
             this.labelHeadings.AutoSize = true;
-            this.labelHeadings.Location = new System.Drawing.Point(24, 45);
+            this.labelHeadings.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHeadings.Location = new System.Drawing.Point(23, 57);
             this.labelHeadings.Name = "labelHeadings";
-            this.labelHeadings.Size = new System.Drawing.Size(51, 20);
+            this.labelHeadings.Size = new System.Drawing.Size(40, 16);
             this.labelHeadings.TabIndex = 8;
             this.labelHeadings.Text = "Name";
             // 
             // listBoxPlayers
             // 
+            this.listBoxPlayers.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPlayers.FormattingEnabled = true;
-            this.listBoxPlayers.ItemHeight = 20;
-            this.listBoxPlayers.Location = new System.Drawing.Point(27, 62);
+            this.listBoxPlayers.ItemHeight = 16;
+            this.listBoxPlayers.Location = new System.Drawing.Point(27, 92);
             this.listBoxPlayers.Name = "listBoxPlayers";
             this.listBoxPlayers.ScrollAlwaysVisible = true;
-            this.listBoxPlayers.Size = new System.Drawing.Size(385, 144);
+            this.listBoxPlayers.Size = new System.Drawing.Size(385, 132);
             this.listBoxPlayers.TabIndex = 7;
             this.listBoxPlayers.SelectedIndexChanged += new System.EventHandler(this.listBoxPlayers_SelectedIndexChanged);
             // 
@@ -195,12 +198,14 @@
             // 
             // listBoxNextGame
             // 
+            this.listBoxNextGame.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxNextGame.FormattingEnabled = true;
-            this.listBoxNextGame.ItemHeight = 20;
+            this.listBoxNextGame.ItemHeight = 16;
             this.listBoxNextGame.Location = new System.Drawing.Point(27, 22);
             this.listBoxNextGame.Name = "listBoxNextGame";
-            this.listBoxNextGame.Size = new System.Drawing.Size(236, 104);
+            this.listBoxNextGame.Size = new System.Drawing.Size(236, 100);
             this.listBoxNextGame.TabIndex = 8;
+            this.listBoxNextGame.SelectedIndexChanged += new System.EventHandler(this.listBoxNextGame_SelectedIndexChanged);
             // 
             // buttonRemove
             // 
