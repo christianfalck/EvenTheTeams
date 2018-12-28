@@ -58,6 +58,13 @@ namespace EvenTheTeams
         //If "Change"-button display customer's data
         private void InitializeGui()
         {
+            textBoxName.Text = player.Name;
+            textBoxWins.Text = player.RankingData.Wins.ToString();
+            textBoxDraws.Text = player.RankingData.Draws.ToString();
+            textBoxLosses.Text = player.RankingData.Losses.ToString();
+            textBoxGoals.Text = player.RankingData.Goals.ToString();
+
+            
 
             
             //Move cursor to recipe input box
@@ -88,7 +95,7 @@ namespace EvenTheTeams
             player.Name = textBoxName.Text.Trim();
             bool ok = int.TryParse(textBoxWins.Text, out value);
             player.RankingData.Wins = value;
-            ok = int.TryParse(textBoxDraws.Text, out value);
+            ok = int.TryParse(textBoxGoals.Text, out value);
             player.RankingData.Draws = value;
             ok = int.TryParse(textBoxLosses.Text, out value);
             player.RankingData.Losses = value;

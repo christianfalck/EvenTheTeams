@@ -43,17 +43,42 @@ namespace EvenTheTeams
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-
+            int index = listBoxPlayers.SelectedIndex;
+            if (index >= 0)
+            {
+                AddPlayer frmPlayer = new AddPlayer(playerMgr.GetPlayer(index));
+                if (frmPlayer.ShowDialog() == DialogResult.OK)
+                {
+                    Player playerObj = new Player(frmPlayer.PlayerData);
+                    bool ok = playerMgr.ChangePlayer(playerObj, index);
+                    UpdateGUI();
+                }
+            }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-
+            int index = listBoxPlayers.SelectedIndex;
+            if (index >= 0)
+            {
+                {
+                    playerMgr.DeletePlayer(index);
+                    UpdateGUI();
+                }
+                UpdateGUI();
+            }
         }
 
         private void buttonAddToNext_Click(object sender, EventArgs e)
         {
-
+            int index = listBoxPlayers.SelectedIndex;
+            if (index >= 0)
+            {
+                {
+                    playerMgr.AddNextPlayer(index);
+                    UpdateNextGUI();
+                }
+             }
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
@@ -61,9 +86,11 @@ namespace EvenTheTeams
             int index = listBoxNextGame.SelectedIndex;
             if (index >= 0)
             {
-                //Delete not done
-                //
-                UpdateGUI();
+                {
+                    playerMgr.DeleteNextPlayer(index);
+                    UpdateNextGUI();
+                }
+                UpdateNextGUI();
             }
         }
 
@@ -86,6 +113,13 @@ namespace EvenTheTeams
         {
             listBoxPlayers.Items.Clear();
             listBoxPlayers.Items.AddRange(playerMgr.GetPlayersInfo());
+        }
+
+        //Clear listbox and print players
+        private void UpdateNextGUI()
+        {
+            listBoxNextGame.Items.Clear();
+            listBoxNextGame.Items.AddRange(playerMgr.GetNextPlayersInfo());
         }
 
         //Get index for highlighted row

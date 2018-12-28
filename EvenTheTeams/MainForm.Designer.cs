@@ -68,6 +68,7 @@
             this.buttonLoad.Text = "Load from file";
             this.buttonLoad.UseVisualStyleBackColor = true;
             this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
+
             // 
             // groupBoxPlayers
             // 
@@ -92,6 +93,7 @@
             // labelHeadings
             // 
             this.labelHeadings.AutoSize = true;
+
             this.labelHeadings.Location = new System.Drawing.Point(48, 120);
             this.labelHeadings.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelHeadings.Name = "labelHeadings";
@@ -101,7 +103,9 @@
             // 
             // listBoxPlayers
             // 
+            this.listBoxPlayers.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxPlayers.FormattingEnabled = true;
+
             this.listBoxPlayers.ItemHeight = 37;
             this.listBoxPlayers.Location = new System.Drawing.Point(58, 169);
             this.listBoxPlayers.Margin = new System.Windows.Forms.Padding(6);
@@ -176,6 +180,7 @@
             // 
             // listBoxNextGame
             // 
+            this.listBoxNextGame.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxNextGame.FormattingEnabled = true;
             this.listBoxNextGame.ItemHeight = 37;
             this.listBoxNextGame.Location = new System.Drawing.Point(54, 42);

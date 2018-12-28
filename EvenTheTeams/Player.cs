@@ -16,6 +16,7 @@ namespace EvenTheTeams
         Ranking ranking = new Ranking();
         double score = 0;
 
+
         //Constructor
         public Player()
         {
@@ -37,6 +38,7 @@ namespace EvenTheTeams
         }
 
         //Properties
+
         public string Name
         {
             get { return name; }
