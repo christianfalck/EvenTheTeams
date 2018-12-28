@@ -12,7 +12,7 @@ namespace EvenTheTeams
      * Divide by the number of games played
      * 
      * 
-     * Thoughts on other algorithms: 
+     * Thoughts on future algorithms: 
      * Easy version: 	Each player gets points based on the number of goals made by the team. 					
 	 *                  Points = goals made by own team / goals made by other team. 
      *                  This way, a close game 9 vs 10 gives almost the same points to players of both teams. 

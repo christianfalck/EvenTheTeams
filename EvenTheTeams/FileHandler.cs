@@ -10,16 +10,16 @@ namespace EvenTheTeams
 {
     class FileHandler
     {
-        // Function that returns players with random names and random ranking
+        // Function that gererate players with random names and random ranking
         public static List<Player> RandomizePlayers(int numberOfPlayers)
         {
             List<Player> players = new List<Player>();
             Random random = new Random();
             for (int a = 0; a < numberOfPlayers; a++)
             {
-                const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ";
-                string name = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray());
-                Ranking ranking = new Ranking(random.Next(20), random.Next(20), random.Next(20), random.Next(20));
+                const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ"; // All available letters in the name
+                string name = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray()); // randomize a name
+                Ranking ranking = new Ranking(random.Next(20), random.Next(20), random.Next(20), random.Next(20)); // randomize ranking
                 players.Add(new Player(name, ranking));
             }
             return players;
@@ -36,10 +36,11 @@ namespace EvenTheTeams
             File.WriteAllText(path, textToSave);
         }
 
-        // Splittin all lines in a file and parsing a Player from each line
+        // Splitting all lines in a file and parsing a Player from each line
         public static List<Player> OpenFile(string path)
         {
             string readText = File.ReadAllText(path);
+            // Following is the code that splits each row into a string in an array
             string[] lines = readText.Split(
                 new[] { Environment.NewLine },
                 StringSplitOptions.None
@@ -53,7 +54,7 @@ namespace EvenTheTeams
             return players;
         }
 
-        // Player is parsed into a 20-character name and ranking being the rest
+        // Player data is parsed into a 20-character name and ranking being the rest
         private static Player ParsePlayerFromString(string playerString)
         {
             string name = playerString.Substring(0, 20).Trim();

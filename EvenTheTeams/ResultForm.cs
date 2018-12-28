@@ -12,13 +12,16 @@ namespace EvenTheTeams
 {
     public partial class ResultForm : Form
     {
+        // The class that holds the two balanced teams
+        private DividePlayersAlgorithm dpa;
 
-        private DividePlayersAlgorithm dpa; 
-
+        // If this is created without a list of players, 
+        // we generate 10 players to present the functionality of the algorithm
         public ResultForm() :this(FileHandler.RandomizePlayers(10))
         {
         }
 
+        // Default constructor, where the players who should be divided is given as a parameter
         public ResultForm(List<Player> players)
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace EvenTheTeams
             CalculateAndPresentTeamsAndScores();
         }
 
+        // Activating/Deactivating move buttons based on if a player in the list is selected or not
         private void UpdateGUI()
         {
             if(listBoxTeam1.SelectedIndex >= 0)
@@ -47,19 +51,21 @@ namespace EvenTheTeams
             }
         }
 
+        // Used when moving a player from Team 1 to Team 2
         private void buttonMoveTo2_Click(object sender, EventArgs e)
         {
-            FileHandler.SaveFile(dpa.Team1,"test.txt");
             dpa.MovePlayer(listBoxTeam1.SelectedIndex, true);
             CalculateAndPresentTeamsAndScores();
         }
 
+        // Used when moving a player from Team 2 to Team 1
         private void buttonMoveTo1_Click(object sender, EventArgs e)
         {
             dpa.MovePlayer(listBoxTeam2.SelectedIndex, false);
             CalculateAndPresentTeamsAndScores();
         }
 
+        // Presents the players with score and a total score below each team
         private void CalculateAndPresentTeamsAndScores()
         {
             listBoxTeam1.Items.Clear();
@@ -77,19 +83,16 @@ namespace EvenTheTeams
             UpdateGUI();
         }
 
+        // When the user clicks on one of the listBoxes, the corresponding button should activate
         private void listBoxTeam1_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateGUI();
         }
 
+        // When the user clicks on one of the listBoxes, the corresponding button should activate
         private void listBoxTeam2_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateGUI();
-        }
-
-        private void ResultForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -16,7 +16,6 @@ namespace EvenTheTeams
         Ranking ranking = new Ranking();
         double score = 0;
 
-
         //Constructor
         public Player()
         {
@@ -59,6 +58,8 @@ namespace EvenTheTeams
             }
         }
 
+        // Score is used by the algorithm to divide players into two groups
+        // where the total score of the players in the two groups should be close to eachother
         public double Score
         {
             get { return score; }

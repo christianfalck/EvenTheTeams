@@ -48,6 +48,7 @@ namespace EvenTheTeams
             }
         }
 
+        // Verify that the string consists of only a number (int). Can be used for the ranking
         public bool VerifyNumber(string number)
         {
             return int.TryParse(number, out int result);
