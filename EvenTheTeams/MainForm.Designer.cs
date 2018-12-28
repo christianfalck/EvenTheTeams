@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBoxFile = new System.Windows.Forms.GroupBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
-            this.labelPath = new System.Windows.Forms.Label();
-            this.textBoxPath = new System.Windows.Forms.TextBox();
             this.groupBoxPlayers = new System.Windows.Forms.GroupBox();
             this.labelHeadings = new System.Windows.Forms.Label();
             this.listBoxPlayers = new System.Windows.Forms.ListBox();
@@ -44,74 +41,50 @@
             this.listBoxNextGame = new System.Windows.Forms.ListBox();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonCalculate = new System.Windows.Forms.Button();
-            this.groupBoxFile.SuspendLayout();
             this.groupBoxPlayers.SuspendLayout();
             this.groupBoxNext.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBoxFile
-            // 
-            this.groupBoxFile.Controls.Add(this.buttonSave);
-            this.groupBoxFile.Controls.Add(this.buttonLoad);
-            this.groupBoxFile.Controls.Add(this.labelPath);
-            this.groupBoxFile.Controls.Add(this.textBoxPath);
-            this.groupBoxFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFile.Location = new System.Drawing.Point(12, 12);
-            this.groupBoxFile.Name = "groupBoxFile";
-            this.groupBoxFile.Size = new System.Drawing.Size(455, 97);
-            this.groupBoxFile.TabIndex = 0;
-            this.groupBoxFile.TabStop = false;
-            this.groupBoxFile.Text = "File handling";
-            // 
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSave.Location = new System.Drawing.Point(281, 59);
+            this.buttonSave.Location = new System.Drawing.Point(604, 44);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(6);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(110, 32);
+            this.buttonSave.Size = new System.Drawing.Size(220, 62);
             this.buttonSave.TabIndex = 3;
             this.buttonSave.Text = "Save to file";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonLoad
             // 
             this.buttonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLoad.Location = new System.Drawing.Point(316, 22);
+            this.buttonLoad.Location = new System.Drawing.Point(345, 44);
+            this.buttonLoad.Margin = new System.Windows.Forms.Padding(6);
             this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(75, 34);
+            this.buttonLoad.Size = new System.Drawing.Size(234, 62);
             this.buttonLoad.TabIndex = 2;
-            this.buttonLoad.Text = "Load";
+            this.buttonLoad.Text = "Load from file";
             this.buttonLoad.UseVisualStyleBackColor = true;
-            // 
-            // labelPath
-            // 
-            this.labelPath.AutoSize = true;
-            this.labelPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPath.Location = new System.Drawing.Point(6, 30);
-            this.labelPath.Name = "labelPath";
-            this.labelPath.Size = new System.Drawing.Size(59, 16);
-            this.labelPath.TabIndex = 1;
-            this.labelPath.Text = "File path";
-            // 
-            // textBoxPath
-            // 
-            this.textBoxPath.Location = new System.Drawing.Point(71, 30);
-            this.textBoxPath.Name = "textBoxPath";
-            this.textBoxPath.Size = new System.Drawing.Size(239, 26);
-            this.textBoxPath.TabIndex = 0;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // groupBoxPlayers
             // 
+            this.groupBoxPlayers.Controls.Add(this.buttonSave);
             this.groupBoxPlayers.Controls.Add(this.labelHeadings);
+            this.groupBoxPlayers.Controls.Add(this.buttonLoad);
             this.groupBoxPlayers.Controls.Add(this.listBoxPlayers);
             this.groupBoxPlayers.Controls.Add(this.buttonAddToNext);
             this.groupBoxPlayers.Controls.Add(this.buttonDelete);
             this.groupBoxPlayers.Controls.Add(this.buttonChange);
             this.groupBoxPlayers.Controls.Add(this.buttonAddPlayer);
             this.groupBoxPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPlayers.Location = new System.Drawing.Point(12, 115);
+            this.groupBoxPlayers.Location = new System.Drawing.Point(24, 15);
+            this.groupBoxPlayers.Margin = new System.Windows.Forms.Padding(6);
             this.groupBoxPlayers.Name = "groupBoxPlayers";
-            this.groupBoxPlayers.Size = new System.Drawing.Size(455, 267);
+            this.groupBoxPlayers.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBoxPlayers.Size = new System.Drawing.Size(910, 719);
             this.groupBoxPlayers.TabIndex = 1;
             this.groupBoxPlayers.TabStop = false;
             this.groupBoxPlayers.Text = "Players";
@@ -119,29 +92,32 @@
             // labelHeadings
             // 
             this.labelHeadings.AutoSize = true;
-            this.labelHeadings.Location = new System.Drawing.Point(24, 45);
+            this.labelHeadings.Location = new System.Drawing.Point(48, 120);
+            this.labelHeadings.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.labelHeadings.Name = "labelHeadings";
-            this.labelHeadings.Size = new System.Drawing.Size(51, 20);
+            this.labelHeadings.Size = new System.Drawing.Size(103, 37);
             this.labelHeadings.TabIndex = 8;
             this.labelHeadings.Text = "Name";
             // 
             // listBoxPlayers
             // 
             this.listBoxPlayers.FormattingEnabled = true;
-            this.listBoxPlayers.ItemHeight = 20;
-            this.listBoxPlayers.Location = new System.Drawing.Point(27, 62);
+            this.listBoxPlayers.ItemHeight = 37;
+            this.listBoxPlayers.Location = new System.Drawing.Point(58, 169);
+            this.listBoxPlayers.Margin = new System.Windows.Forms.Padding(6);
             this.listBoxPlayers.Name = "listBoxPlayers";
             this.listBoxPlayers.ScrollAlwaysVisible = true;
-            this.listBoxPlayers.Size = new System.Drawing.Size(385, 144);
+            this.listBoxPlayers.Size = new System.Drawing.Size(766, 374);
             this.listBoxPlayers.TabIndex = 7;
             this.listBoxPlayers.SelectedIndexChanged += new System.EventHandler(this.listBoxPlayers_SelectedIndexChanged);
             // 
             // buttonAddToNext
             // 
             this.buttonAddToNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddToNext.Location = new System.Drawing.Point(208, 228);
+            this.buttonAddToNext.Location = new System.Drawing.Point(416, 588);
+            this.buttonAddToNext.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAddToNext.Name = "buttonAddToNext";
-            this.buttonAddToNext.Size = new System.Drawing.Size(204, 33);
+            this.buttonAddToNext.Size = new System.Drawing.Size(408, 63);
             this.buttonAddToNext.TabIndex = 6;
             this.buttonAddToNext.Text = "Add player to next game";
             this.buttonAddToNext.UseVisualStyleBackColor = true;
@@ -150,9 +126,10 @@
             // buttonDelete
             // 
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDelete.Location = new System.Drawing.Point(122, 228);
+            this.buttonDelete.Location = new System.Drawing.Point(244, 588);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(6);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 33);
+            this.buttonDelete.Size = new System.Drawing.Size(150, 63);
             this.buttonDelete.TabIndex = 5;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
@@ -161,9 +138,10 @@
             // buttonChange
             // 
             this.buttonChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChange.Location = new System.Drawing.Point(27, 228);
+            this.buttonChange.Location = new System.Drawing.Point(54, 588);
+            this.buttonChange.Margin = new System.Windows.Forms.Padding(6);
             this.buttonChange.Name = "buttonChange";
-            this.buttonChange.Size = new System.Drawing.Size(75, 33);
+            this.buttonChange.Size = new System.Drawing.Size(150, 63);
             this.buttonChange.TabIndex = 4;
             this.buttonChange.Text = "Change";
             this.buttonChange.UseVisualStyleBackColor = true;
@@ -172,10 +150,11 @@
             // buttonAddPlayer
             // 
             this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddPlayer.Location = new System.Drawing.Point(304, 19);
+            this.buttonAddPlayer.Location = new System.Drawing.Point(54, 49);
+            this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(6);
             this.buttonAddPlayer.Name = "buttonAddPlayer";
-            this.buttonAddPlayer.Size = new System.Drawing.Size(108, 27);
-            this.buttonAddPlayer.TabIndex = 3;
+            this.buttonAddPlayer.Size = new System.Drawing.Size(216, 52);
+            this.buttonAddPlayer.TabIndex = 1;
             this.buttonAddPlayer.Text = "Add player";
             this.buttonAddPlayer.UseVisualStyleBackColor = true;
             this.buttonAddPlayer.Click += new System.EventHandler(this.buttonAddPlayer_Click);
@@ -186,9 +165,11 @@
             this.groupBoxNext.Controls.Add(this.buttonRemove);
             this.groupBoxNext.Controls.Add(this.buttonCalculate);
             this.groupBoxNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxNext.Location = new System.Drawing.Point(12, 388);
+            this.groupBoxNext.Location = new System.Drawing.Point(24, 746);
+            this.groupBoxNext.Margin = new System.Windows.Forms.Padding(6);
             this.groupBoxNext.Name = "groupBoxNext";
-            this.groupBoxNext.Size = new System.Drawing.Size(455, 174);
+            this.groupBoxNext.Padding = new System.Windows.Forms.Padding(6);
+            this.groupBoxNext.Size = new System.Drawing.Size(910, 335);
             this.groupBoxNext.TabIndex = 2;
             this.groupBoxNext.TabStop = false;
             this.groupBoxNext.Text = "Next Game";
@@ -196,18 +177,20 @@
             // listBoxNextGame
             // 
             this.listBoxNextGame.FormattingEnabled = true;
-            this.listBoxNextGame.ItemHeight = 20;
-            this.listBoxNextGame.Location = new System.Drawing.Point(27, 22);
+            this.listBoxNextGame.ItemHeight = 37;
+            this.listBoxNextGame.Location = new System.Drawing.Point(54, 42);
+            this.listBoxNextGame.Margin = new System.Windows.Forms.Padding(6);
             this.listBoxNextGame.Name = "listBoxNextGame";
-            this.listBoxNextGame.Size = new System.Drawing.Size(236, 104);
+            this.listBoxNextGame.Size = new System.Drawing.Size(468, 189);
             this.listBoxNextGame.TabIndex = 8;
             // 
             // buttonRemove
             // 
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(27, 135);
+            this.buttonRemove.Location = new System.Drawing.Point(54, 260);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(6);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(223, 33);
+            this.buttonRemove.Size = new System.Drawing.Size(446, 63);
             this.buttonRemove.TabIndex = 4;
             this.buttonRemove.Text = "Remove player from game";
             this.buttonRemove.UseVisualStyleBackColor = true;
@@ -216,9 +199,10 @@
             // buttonCalculate
             // 
             this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCalculate.Location = new System.Drawing.Point(271, 61);
+            this.buttonCalculate.Location = new System.Drawing.Point(542, 117);
+            this.buttonCalculate.Margin = new System.Windows.Forms.Padding(6);
             this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(141, 31);
+            this.buttonCalculate.Size = new System.Drawing.Size(282, 60);
             this.buttonCalculate.TabIndex = 3;
             this.buttonCalculate.Text = "Calculate Teams";
             this.buttonCalculate.UseVisualStyleBackColor = true;
@@ -226,16 +210,14 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 564);
+            this.ClientSize = new System.Drawing.Size(988, 1085);
             this.Controls.Add(this.groupBoxNext);
             this.Controls.Add(this.groupBoxPlayers);
-            this.Controls.Add(this.groupBoxFile);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainForm";
             this.Text = "Even the Teams";
-            this.groupBoxFile.ResumeLayout(false);
-            this.groupBoxFile.PerformLayout();
             this.groupBoxPlayers.ResumeLayout(false);
             this.groupBoxPlayers.PerformLayout();
             this.groupBoxNext.ResumeLayout(false);
@@ -244,12 +226,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBoxFile;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.Label labelPath;
-        private System.Windows.Forms.TextBox textBoxPath;
         private System.Windows.Forms.GroupBox groupBoxPlayers;
         private System.Windows.Forms.Label labelHeadings;
         private System.Windows.Forms.ListBox listBoxPlayers;

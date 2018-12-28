@@ -69,7 +69,15 @@ namespace EvenTheTeams
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            ResultForm result = new ResultForm();
+            ResultForm result;
+            if (playerMgr.GetNextGamePlayers().Count() > 0)
+            {
+                result = new ResultForm(playerMgr.GetNextGamePlayers());
+            }
+            else
+            {
+                result = new ResultForm(); // randomizing players
+            }
             result.ShowDialog();
         }
 
@@ -84,6 +92,29 @@ namespace EvenTheTeams
         private void listBoxPlayers_SelectedIndexChanged(object sender, EventArgs e)
             {
                 int index = listBoxPlayers.SelectedIndex;
-            }   
+            }
+
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            DialogResult result = openFileDialog1.ShowDialog();
+            List<Player> players; 
+            if (result == DialogResult.OK) 
+            {
+                string file = openFileDialog1.FileName;
+                players = FileHandler.OpenFile(file);
+                foreach (Player player in players)
+                {
+                    playerMgr.AddPlayer(player);
+                }
+            }
+            UpdateGUI();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            // What do we want to save in the file? All players or players for next game?
+            FileHandler.SaveFile(playerMgr.GetNextGamePlayers(), "players.txt");
+        }
     }
 }

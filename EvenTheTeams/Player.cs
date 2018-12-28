@@ -14,6 +14,7 @@ namespace EvenTheTeams
     {
         string name = string.Empty;
         Ranking ranking = new Ranking();
+        double score = 0;
 
         //Constructor
         public Player()
@@ -55,6 +56,13 @@ namespace EvenTheTeams
                     ranking = value;
             }
         }
+
+        public double Score
+        {
+            get { return score; }
+            set { score = value; }
+        }
+
         //A formatted string as heading for the values formatted in the ToString
         public string GetToStringItemsHeadings
         {

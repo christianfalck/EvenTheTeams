@@ -40,7 +40,7 @@ namespace EvenTheTeams
             Player custObj = new Player();
             return custObj.GetToStringItemsHeadings;
         }
-        //Get all playerss in a list
+        //Get all players info in a list
         public string[] GetPlayersInfo()
         {
             var playersInfo = new string[Count];
@@ -49,6 +49,12 @@ namespace EvenTheTeams
                 playersInfo[i] = GetPlayer(i).ToString();
             }
             return playersInfo;
+        }
+
+        //Get all players for next game
+        public List<Player> GetNextGamePlayers()
+        {
+            return players;
         }
 
         //Add a new object to the list

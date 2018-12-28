@@ -30,8 +30,8 @@
         {
             this.labelTeam1 = new System.Windows.Forms.Label();
             this.labelTeam2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBoxTeam1 = new System.Windows.Forms.ListBox();
+            this.listBoxTeam2 = new System.Windows.Forms.ListBox();
             this.buttonMoveTo2 = new System.Windows.Forms.Button();
             this.buttonMoveTo1 = new System.Windows.Forms.Button();
             this.labelTextPoints1 = new System.Windows.Forms.Label();
@@ -60,23 +60,25 @@
             this.labelTeam2.TabIndex = 1;
             this.labelTeam2.Text = "Team 2";
             // 
-            // listBox1
+            // listBoxTeam1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(52, 139);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(337, 554);
-            this.listBox1.TabIndex = 2;
+            this.listBoxTeam1.FormattingEnabled = true;
+            this.listBoxTeam1.ItemHeight = 25;
+            this.listBoxTeam1.Location = new System.Drawing.Point(52, 139);
+            this.listBoxTeam1.Name = "listBoxTeam1";
+            this.listBoxTeam1.Size = new System.Drawing.Size(337, 554);
+            this.listBoxTeam1.TabIndex = 2;
+            this.listBoxTeam1.SelectedIndexChanged += new System.EventHandler(this.listBoxTeam1_SelectedIndexChanged);
             // 
-            // listBox2
+            // listBoxTeam2
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 25;
-            this.listBox2.Location = new System.Drawing.Point(487, 139);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(337, 554);
-            this.listBox2.TabIndex = 3;
+            this.listBoxTeam2.FormattingEnabled = true;
+            this.listBoxTeam2.ItemHeight = 25;
+            this.listBoxTeam2.Location = new System.Drawing.Point(487, 139);
+            this.listBoxTeam2.Name = "listBoxTeam2";
+            this.listBoxTeam2.Size = new System.Drawing.Size(337, 554);
+            this.listBoxTeam2.TabIndex = 3;
+            this.listBoxTeam2.SelectedIndexChanged += new System.EventHandler(this.listBoxTeam2_SelectedIndexChanged);
             // 
             // buttonMoveTo2
             // 
@@ -98,6 +100,7 @@
             this.buttonMoveTo1.TabIndex = 5;
             this.buttonMoveTo1.Text = "<";
             this.buttonMoveTo1.UseVisualStyleBackColor = true;
+            this.buttonMoveTo1.Click += new System.EventHandler(this.buttonMoveTo1_Click);
             // 
             // labelTextPoints1
             // 
@@ -150,12 +153,13 @@
             this.Controls.Add(this.labelTextPoints1);
             this.Controls.Add(this.buttonMoveTo1);
             this.Controls.Add(this.buttonMoveTo2);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxTeam2);
+            this.Controls.Add(this.listBoxTeam1);
             this.Controls.Add(this.labelTeam2);
             this.Controls.Add(this.labelTeam1);
             this.Name = "ResultForm";
             this.Text = "ResultForm";
+            this.Load += new System.EventHandler(this.ResultForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,8 +169,8 @@
 
         private System.Windows.Forms.Label labelTeam1;
         private System.Windows.Forms.Label labelTeam2;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listBoxTeam1;
+        private System.Windows.Forms.ListBox listBoxTeam2;
         private System.Windows.Forms.Button buttonMoveTo2;
         private System.Windows.Forms.Button buttonMoveTo1;
         private System.Windows.Forms.Label labelTextPoints1;
