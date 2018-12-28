@@ -68,13 +68,13 @@ namespace EvenTheTeams
         //A formatted string as heading for the values formatted in the ToString
         public string GetToStringItemsHeadings
         {
-            get { return string.Format("{0, -5} {1, -25} ", "Name", ranking.GetToStringItemsHeadings); }
+            get { return string.Format("{0, -20} {1, -40} ", "Name", ranking.GetToStringItemsHeadings); }
         }
 
         // Delivers a formatted string with data stored in the object.
         public override string ToString()
         {
-            string strOut = string.Format(" {0, -5} {1, -25} ", name, ranking.ToString());
+            string strOut = string.Format(" {0, -20} {1, -20} ", name, ranking.ToString());
             return strOut;
         }
 

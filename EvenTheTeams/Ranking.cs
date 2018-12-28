@@ -31,11 +31,12 @@ namespace EvenTheTeams
             goals = 0;
         }
 
-        public Ranking (int wins, int draws, int losses)
+        public Ranking (int wins, int draws, int losses, int goals)
         {
             this.wins = wins;
             this.draws = draws;
             this.losses = losses;
+            this.goals = goals;
         }
 
         //Properties
@@ -76,7 +77,7 @@ namespace EvenTheTeams
         // Delivers a formatted string with data stored in the object.
         public override string ToString()
         {
-            string strOut = string.Format("{0,-10} {1,-10} {2,-10} {3,-10}", wins ,draws,losses, goals );
+            string strOut = string.Format("{0,-5} {1,-5} {2,-5} {3,-5}", wins ,draws,losses, goals );
             return strOut;
         }
     }
