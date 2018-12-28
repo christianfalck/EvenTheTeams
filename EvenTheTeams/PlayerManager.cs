@@ -68,11 +68,16 @@ namespace EvenTheTeams
             return playersInfo;
         }
 
-
-        //Get all players for next game
-        public List<Player> GetNextGamePlayers()
+        // Get all available players
+        public List<Player> GetAllPlayers()
         {
             return players;
+        }
+
+        // Get all players for next game: Used in the ResultForm
+        public List<Player> GetNextGamePlayers()
+        {
+            return nextGamePlayers;
         }
 
         public string[] GetNextPlayersInfo()

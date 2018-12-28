@@ -103,7 +103,7 @@ namespace EvenTheTeams
             }
             else
             {
-                result = new ResultForm(); // randomizing players
+                result = new ResultForm(); // randomizing players if there are none
             }
             result.ShowDialog();
         }
@@ -128,6 +128,7 @@ namespace EvenTheTeams
                 int index = listBoxPlayers.SelectedIndex;
             }
 
+        // Open a file selection window and load players from the selected file
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
@@ -145,10 +146,21 @@ namespace EvenTheTeams
             UpdateGUI();
         }
 
+        // Saving all available players in a file players.txt
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            // What do we want to save in the file? All players or players for next game?
-            FileHandler.SaveFile(playerMgr.GetNextGamePlayers(), "players.txt");
+            FileHandler.SaveFile(playerMgr.GetAllPlayers(), "players.txt");
+        }
+
+        // For testing purposes, we've added a function to add a number of random players
+        private void buttonRandomizePlayers_Click(object sender, EventArgs e)
+        {
+            List<Player> players = FileHandler.RandomizePlayers(10);
+            foreach (Player player in players)
+            {
+                playerMgr.AddPlayer(player);
+            }
+            UpdateGUI();
         }
     }
 }
