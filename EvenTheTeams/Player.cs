@@ -36,6 +36,7 @@ namespace EvenTheTeams
             this.name = other.name;
             this.ranking = other.ranking;
             this.contactData = other.contactData;
+            this.score = other.score;
         }
 
         //Properties

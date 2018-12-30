@@ -80,12 +80,17 @@ namespace EvenTheTeams
             team2.Clear();
 
             // calculate the points for each player: 3p for win, 1p for draw
-            var sortedPlayers = new List<KeyValuePair<int, Player>>();
+            var sortedPlayers = new List<KeyValuePair<double, Player>>();
             foreach(Player player in players)
             {
-                int points = player.RankingData.Wins * 3 + player.RankingData.Draws;
-                player.Score = points;
-                sortedPlayers.Add(new KeyValuePair<int, Player>(points,player));
+                if(player.Score == 0)
+                {
+                    //This is the case if we load from CSV and calculate score immediately on load
+                    int points = player.RankingData.Wins * 3 + player.RankingData.Draws;
+                    player.Score = points;
+                }
+                
+                sortedPlayers.Add(new KeyValuePair<double, Player>(player.Score, player));
             }
 
             // sort the list of players based on points

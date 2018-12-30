@@ -151,7 +151,7 @@ namespace EvenTheTeams
             if (result == DialogResult.OK) 
             {
                 string file = openFileDialog1.FileName;
-                players = FileHandler.OpenFile(file);
+                players = FileHandler.OpenCSV(file);
                 foreach (Player player in players)
                 {
                     playerMgr.AddPlayer(player);
