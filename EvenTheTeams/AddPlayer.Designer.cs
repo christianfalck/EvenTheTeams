@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPlayer_FormClosing);
             this.groupBoxAddPlayer = new System.Windows.Forms.GroupBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
@@ -68,9 +69,9 @@
             this.groupBoxAddPlayer.Controls.Add(this.labelName);
             this.groupBoxAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxAddPlayer.Location = new System.Drawing.Point(31, 15);
-            this.groupBoxAddPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxAddPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxAddPlayer.Name = "groupBoxAddPlayer";
-            this.groupBoxAddPlayer.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxAddPlayer.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxAddPlayer.Size = new System.Drawing.Size(456, 479);
             this.groupBoxAddPlayer.TabIndex = 0;
             this.groupBoxAddPlayer.TabStop = false;
@@ -81,7 +82,7 @@
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Location = new System.Drawing.Point(281, 428);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(136, 43);
             this.buttonCancel.TabIndex = 15;
@@ -94,7 +95,7 @@
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOK.Location = new System.Drawing.Point(104, 428);
-            this.buttonOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(148, 43);
             this.buttonOK.TabIndex = 14;
@@ -105,7 +106,7 @@
             // textBoxGoals
             // 
             this.textBoxGoals.Location = new System.Drawing.Point(104, 365);
-            this.textBoxGoals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGoals.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGoals.Name = "textBoxGoals";
             this.textBoxGoals.Size = new System.Drawing.Size(312, 34);
             this.textBoxGoals.TabIndex = 13;
@@ -113,7 +114,7 @@
             // textBoxDraws
             // 
             this.textBoxDraws.Location = new System.Drawing.Point(104, 313);
-            this.textBoxDraws.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDraws.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDraws.Name = "textBoxDraws";
             this.textBoxDraws.Size = new System.Drawing.Size(312, 34);
             this.textBoxDraws.TabIndex = 12;
@@ -121,7 +122,7 @@
             // textBoxLosses
             // 
             this.textBoxLosses.Location = new System.Drawing.Point(104, 263);
-            this.textBoxLosses.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxLosses.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLosses.Name = "textBoxLosses";
             this.textBoxLosses.Size = new System.Drawing.Size(312, 34);
             this.textBoxLosses.TabIndex = 11;
@@ -129,7 +130,7 @@
             // textBoxWins
             // 
             this.textBoxWins.Location = new System.Drawing.Point(104, 214);
-            this.textBoxWins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxWins.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxWins.Name = "textBoxWins";
             this.textBoxWins.Size = new System.Drawing.Size(312, 34);
             this.textBoxWins.TabIndex = 10;
@@ -137,7 +138,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(104, 161);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(312, 34);
             this.textBoxPhone.TabIndex = 9;
@@ -145,7 +146,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(104, 111);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(312, 34);
             this.textBoxEmail.TabIndex = 8;
@@ -153,7 +154,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(104, 60);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(312, 34);
             this.textBoxName.TabIndex = 7;
@@ -241,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 503);
             this.Controls.Add(this.groupBoxAddPlayer);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddPlayer";
             this.Text = "AddPlayer";
             this.groupBoxAddPlayer.ResumeLayout(false);

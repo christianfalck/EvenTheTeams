@@ -71,7 +71,7 @@ namespace EvenTheTeams
         //A formatted string as heading for the values formatted in the ToString
         public string GetToStringItemsHeadings
         {
-            get { return string.Format("{0,-10} {1,-10} {2,-10} {3,-10}", "wins", "draws", "losses", "goals"); }
+            get { return string.Format("{0,-5} {1,-5} {2,-5} {3,-5}", "wins", "draws", "losses", "goals"); }
         }
 
         // Delivers a formatted string with data stored in the object.

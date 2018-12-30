@@ -28,6 +28,11 @@ namespace EvenTheTeams
         private void InitializeGUI()
         {
             labelHeadings.Text = playerMgr.GetHeading();
+            buttonAddToNext.Enabled = false;
+            buttonChange.Enabled = false;
+            buttonDelete.Enabled = false;
+            buttonRemove.Enabled = false;
+            buttonShowContact.Enabled = false;
         }
 
         private void buttonAddPlayer_Click(object sender, EventArgs e)
@@ -113,6 +118,10 @@ namespace EvenTheTeams
         {
             listBoxPlayers.Items.Clear();
             listBoxPlayers.Items.AddRange(playerMgr.GetPlayersInfo());
+            buttonAddToNext.Enabled = false;
+            buttonChange.Enabled = false;
+            buttonDelete.Enabled = false;
+            buttonShowContact.Enabled = false;
         }
 
         //Clear listbox and print players
@@ -120,13 +129,18 @@ namespace EvenTheTeams
         {
             listBoxNextGame.Items.Clear();
             listBoxNextGame.Items.AddRange(playerMgr.GetNextPlayersInfo());
+            buttonRemove.Enabled = false;
         }
 
         //Get index for highlighted row
         private void listBoxPlayers_SelectedIndexChanged(object sender, EventArgs e)
-            {
-                int index = listBoxPlayers.SelectedIndex;
-            }
+        {
+            int index = listBoxPlayers.SelectedIndex;
+            buttonAddToNext.Enabled = true;
+            buttonChange.Enabled = true;
+            buttonDelete.Enabled = true;
+            buttonShowContact.Enabled = true;
+        }
 
         // Open a file selection window and load players from the selected file
         private void buttonLoad_Click(object sender, EventArgs e)
@@ -161,6 +175,22 @@ namespace EvenTheTeams
                 playerMgr.AddPlayer(player);
             }
             UpdateGUI();
+        }
+
+        private void listBoxNextGame_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            buttonRemove.Enabled = true;
+        }
+
+        private void buttonShowContact_Click(object sender, EventArgs e)
+        {
+            int index = listBoxPlayers.SelectedIndex;
+            if (index >= 0)
+            {
+                Player player = playerMgr.GetPlayer(index);
+                string strOut = "phone: " + player.ContactData.Phone + "  email: " + player.ContactData.Email;
+                MessageBox.Show(strOut);
+            }           
         }
     }
 }

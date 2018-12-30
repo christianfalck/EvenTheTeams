@@ -159,7 +159,6 @@
             this.Controls.Add(this.labelTeam1);
             this.Name = "ResultForm";
             this.Text = "ResultForm";
-            this.Load += new System.EventHandler(this.ResultForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

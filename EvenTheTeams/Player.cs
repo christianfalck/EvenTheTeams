@@ -14,6 +14,7 @@ namespace EvenTheTeams
     {
         string name = string.Empty;
         Ranking ranking = new Ranking();
+        ContactData contactData = new ContactData();
         double score = 0;
 
         //Constructor
@@ -34,6 +35,7 @@ namespace EvenTheTeams
         {
             this.name = other.name;
             this.ranking = other.ranking;
+            this.contactData = other.contactData;
         }
 
         //Properties
@@ -58,6 +60,17 @@ namespace EvenTheTeams
             }
         }
 
+        public ContactData ContactData
+        {
+            get { return contactData; }
+
+            set
+            {
+                if (value != null)
+                    contactData = value;
+            }
+        }
+
         // Score is used by the algorithm to divide players into two groups
         // where the total score of the players in the two groups should be close to eachother
         public double Score
@@ -75,7 +88,7 @@ namespace EvenTheTeams
         // Delivers a formatted string with data stored in the object.
         public override string ToString()
         {
-            string strOut = string.Format(" {0, -20} {1, -20} ", name, ranking.ToString());
+            string strOut = string.Format(" {0, -20} {1, -40} ", name, ranking.ToString());
             return strOut;
         }
 

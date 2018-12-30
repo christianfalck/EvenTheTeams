@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Lena Lindblad
+//HT2018-DA204B-88221
+//Project 
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,10 +66,8 @@ namespace EvenTheTeams
             textBoxWins.Text = player.RankingData.Wins.ToString();
             textBoxDraws.Text = player.RankingData.Draws.ToString();
             textBoxLosses.Text = player.RankingData.Losses.ToString();
-            textBoxGoals.Text = player.RankingData.Goals.ToString();
-
-            
-
+            textBoxGoals.Text = player.RankingData.Goals.ToString();          
+        
             
             //Move cursor to recipe input box
             this.ActiveControl = textBoxName;
@@ -73,11 +75,13 @@ namespace EvenTheTeams
 
         }
 
+        //OK
         private void buttonOK_Click(object sender, EventArgs e)
         {
             ReadInput();
         }
 
+        //Cancel
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Discard input?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -88,26 +92,74 @@ namespace EvenTheTeams
             }
         }
 
+        //Read input
         private void ReadInput()
         {
+            InputVerification verification = new InputVerification();
             int value = 0;
 
+            if (verification.VerifyName(textBoxName.Text))
+            {
             player.Name = textBoxName.Text.Trim();
+            }
+            else
+            {
+                MessageBox.Show("Wrong name format");
+                closeForm = false;
+            }
+
             bool ok = int.TryParse(textBoxWins.Text, out value);
             player.RankingData.Wins = value;
-            ok = int.TryParse(textBoxGoals.Text, out value);
+
+            ok = int.TryParse(textBoxDraws.Text, out value);
             player.RankingData.Draws = value;
+
             ok = int.TryParse(textBoxLosses.Text, out value);
             player.RankingData.Losses = value;
+
+            ok = int.TryParse(textBoxGoals.Text, out value);
+            player.RankingData.Goals = value;
+
+            if (textBoxEmail.Text != string.Empty)
+            {
+                if (verification.VerifyEmail(textBoxEmail.Text))
+                {
+                    player.ContactData.Email = textBoxEmail.Text.Trim();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong email format");
+                    closeForm = false;
+                }
+            }
+
+            if (textBoxPhone.Text != string.Empty)
+            {
+                if (verification.VerifyPhoneNumber(textBoxPhone.Text))
+                {
+                    player.ContactData.Phone = textBoxPhone.Text.Trim();
+                }
+                else
+                {
+                    MessageBox.Show("Wrong phone format");
+                    closeForm = false;
+                }
+            }
+
+
         }
 
+
         //Only close form if user says yes to discard data when cancel is chosen
-        private void ContactForm_FormClosing(object sender, FormClosingEventArgs e)
+
+            private void AddPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (closeForm)
                 e.Cancel = false;  //Close the contact form
             else
                 e.Cancel = true; //Do not close (user has chonsen No)
         }
+                
+
     }
 }
