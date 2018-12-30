@@ -59,6 +59,8 @@ namespace EvenTheTeams
         }
 
         // Player data is parsed into a 20-character name and ranking being the rest
+        // TODO save as a CSV file instead: That way file loading/saving isn't
+        // depending on formatting 
         private static Player ParsePlayerFromString(string playerString)
         {
             string name = playerString.Substring(0, 20).Trim();
