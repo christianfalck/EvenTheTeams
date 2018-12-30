@@ -55,7 +55,6 @@
     <Compile Include="ContactData.cs" />
     <Compile Include="DividePlayersAlgorithm.cs" />
     <Compile Include="FileHandler.cs" />
-    <Compile Include="Game.cs" />
     <Compile Include="InputVerification.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
