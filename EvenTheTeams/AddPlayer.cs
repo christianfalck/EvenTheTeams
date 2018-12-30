@@ -95,12 +95,13 @@ namespace EvenTheTeams
         //Read input
         private void ReadInput()
         {
+            closeForm = true; // Default behavior is that the window is closed
             InputVerification verification = new InputVerification();
             int value = 0;
 
             if (verification.VerifyName(textBoxName.Text))
             {
-            player.Name = textBoxName.Text.Trim();
+                player.Name = textBoxName.Text.Trim();
             }
             else
             {

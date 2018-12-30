@@ -65,7 +65,7 @@ namespace EvenTheTeams
         {
             get { return goals; }
 
-            set { losses = value; }
+            set { goals = value; }
         }
 
         //A formatted string as heading for the values formatted in the ToString
