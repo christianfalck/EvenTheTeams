@@ -34,19 +34,6 @@ namespace EvenTheTeams
      */
     class DividePlayersAlgorithm
     {
-
-        // This will be used for the more advanced algorithms, commented out for now
-        /* 
-        private Game[] games;
-        public Game[] Games
-        {
-            set
-            {
-                games = value;
-            }
-        }
-        */
-
         // First team
         private List<Player> team1;
         public List<Player> Team1
