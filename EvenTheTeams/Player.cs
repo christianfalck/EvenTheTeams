@@ -44,9 +44,11 @@ namespace EvenTheTeams
         {
             get { return name; }
 
-            set {
+            set
+            {
                 if (value != String.Empty)
-                    name = value;  }
+                    name = value;
+            }
         }
 
         public Ranking RankingData

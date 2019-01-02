@@ -24,7 +24,7 @@ namespace EvenTheTeams
         }
 
         //Returns a copy of an element at the position = index
-        public Player GetPlayer (int index)
+        public Player GetPlayer(int index)
         {
             Player copyObj = new Player(players[index]);
             return copyObj;
@@ -53,8 +53,8 @@ namespace EvenTheTeams
         //Get headings
         public string GetHeading()
         {
-            Player custObj = new Player();
-            return custObj.GetToStringItemsHeadings;
+            Player playerObj = new Player();
+            return playerObj.GetToStringItemsHeadings;
         }
 
         //Get all players info in a list
@@ -160,6 +160,15 @@ namespace EvenTheTeams
         public bool CheckNextIndex(int index)
         {
             return (index >= 0) && (index < nextGamePlayers.Count);
+        }
+
+        //Check number of players for next game
+        public bool EnoughPlayers()
+        {
+            if (nextGamePlayers.Count > 9)
+                return true;
+            else
+                return false;
         }
     }
 }

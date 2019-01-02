@@ -49,7 +49,7 @@ namespace EvenTheTeams
 
             set
             {
-                if(value != null)
+                if (value != null)
                 {
                     player = value;
                     InitializeGui();
@@ -57,25 +57,27 @@ namespace EvenTheTeams
             }
         }
 
-     
+
         //Initialize GUI
-        //If "Change"-button display customer's data
+        //If "Change"-button display players's data
         private void InitializeGui()
         {
             textBoxName.Text = player.Name;
+            textBoxEmail.Text = player.ContactData.Email;
+            textBoxPhone.Text = player.ContactData.Phone;
             textBoxWins.Text = player.RankingData.Wins.ToString();
             textBoxDraws.Text = player.RankingData.Draws.ToString();
             textBoxLosses.Text = player.RankingData.Losses.ToString();
-            textBoxGoals.Text = player.RankingData.Goals.ToString();          
-        
+            textBoxGoals.Text = player.RankingData.Goals.ToString();
             
-            //Move cursor to recipe input box
+
+            //Move cursor to name input 
             this.ActiveControl = textBoxName;
             closeForm = true;
 
         }
 
-        //OK
+        //OK button, read input data
         private void buttonOK_Click(object sender, EventArgs e)
         {
             ReadInput();
@@ -84,24 +86,69 @@ namespace EvenTheTeams
         //Cancel
         private void buttonCancel_Click(object sender, EventArgs e)
         {
+            closeForm = false;
             var result = MessageBox.Show("Discard input?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             //If Cancel
             if (result == DialogResult.OK)
             {
-                closeForm = true;              
+                closeForm = true;
             }
         }
 
-        //Read input
+        //Read input, only read next input if above is ok
         private void ReadInput()
         {
-            closeForm = true; // Default behavior is that the window is closed
+            closeForm = true; // Default behavior is that the window is closing
             InputVerification verification = new InputVerification();
             int value = 0;
 
             if (verification.VerifyName(textBoxName.Text))
             {
                 player.Name = textBoxName.Text.Trim();
+
+                //If name ok read ranking
+                if (int.TryParse(textBoxWins.Text, out value))
+                {
+                    player.RankingData.Wins = value;
+
+                    //If wins ok read draws
+                    if (int.TryParse(textBoxDraws.Text, out value))
+                    {
+                        player.RankingData.Draws = value;
+
+                        //If draws ok read losses
+                        if (int.TryParse(textBoxLosses.Text, out value))
+                        {
+                            player.RankingData.Losses = value;
+
+                            //If losses ok read goals
+                            if (int.TryParse(textBoxGoals.Text, out value))
+                                player.RankingData.Goals = value;
+                            else
+                            {
+                                MessageBox.Show("goals must be a number");
+                                closeForm = false;
+                            }
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("losses must be a number");
+                            closeForm = false;
+                        }
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("draws must be a number");
+                        closeForm = false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("wins must be a number");
+                    closeForm = false;
+                }
             }
             else
             {
@@ -109,31 +156,21 @@ namespace EvenTheTeams
                 closeForm = false;
             }
 
-            bool ok = int.TryParse(textBoxWins.Text, out value);
-            player.RankingData.Wins = value;
-
-            ok = int.TryParse(textBoxDraws.Text, out value);
-            player.RankingData.Draws = value;
-
-            ok = int.TryParse(textBoxLosses.Text, out value);
-            player.RankingData.Losses = value;
-
-            ok = int.TryParse(textBoxGoals.Text, out value);
-            player.RankingData.Goals = value;
+            //Check optional email
 
             if (textBoxEmail.Text != string.Empty)
-            {
+
                 if (verification.VerifyEmail(textBoxEmail.Text))
                 {
                     player.ContactData.Email = textBoxEmail.Text.Trim();
+
                 }
                 else
                 {
                     MessageBox.Show("Wrong email format");
                     closeForm = false;
                 }
-            }
-
+            //Check phone
             if (textBoxPhone.Text != string.Empty)
             {
                 if (verification.VerifyPhoneNumber(textBoxPhone.Text))
@@ -146,21 +183,17 @@ namespace EvenTheTeams
                     closeForm = false;
                 }
             }
-
-
         }
 
 
         //Only close form if user says yes to discard data when cancel is chosen
 
-            private void AddPlayer_FormClosing(object sender, FormClosingEventArgs e)
+        private void AddPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (closeForm)
                 e.Cancel = false;  //Close the contact form
             else
                 e.Cancel = true; //Do not close (user has chonsen No)
         }
-                
-
     }
 }

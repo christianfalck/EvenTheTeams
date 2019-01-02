@@ -33,8 +33,10 @@ namespace EvenTheTeams
             buttonDelete.Enabled = false;
             buttonRemove.Enabled = false;
             buttonShowContact.Enabled = false;
+            buttonCalculate.Enabled = false;
         }
 
+        //Open add player form and save or discard changes
         private void buttonAddPlayer_Click(object sender, EventArgs e)
         {
             AddPlayer frmPlayer = new AddPlayer();
@@ -46,6 +48,7 @@ namespace EvenTheTeams
             }
         }
 
+        //Open add player form and save or discard changes
         private void buttonChange_Click(object sender, EventArgs e)
         {
             int index = listBoxPlayers.SelectedIndex;
@@ -61,6 +64,7 @@ namespace EvenTheTeams
             }
         }
 
+        //Delete selected player form the list
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             int index = listBoxPlayers.SelectedIndex;
@@ -74,6 +78,7 @@ namespace EvenTheTeams
             }
         }
 
+        //Add selected player to next game 
         private void buttonAddToNext_Click(object sender, EventArgs e)
         {
             int index = listBoxPlayers.SelectedIndex;
@@ -83,9 +88,10 @@ namespace EvenTheTeams
                     playerMgr.AddNextPlayer(index);
                     UpdateNextGUI();
                 }
-             }
+            }
         }
 
+        //Remove selected player from next game listBox
         private void buttonRemove_Click(object sender, EventArgs e)
         {
             int index = listBoxNextGame.SelectedIndex;
@@ -99,6 +105,7 @@ namespace EvenTheTeams
             }
         }
 
+        //Calculate teams and show reslut in ResultForm
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
             ResultForm result;
@@ -124,12 +131,15 @@ namespace EvenTheTeams
             buttonShowContact.Enabled = false;
         }
 
-        //Clear listbox and print players
+        //Clear listbox and print players, enable Calculate if 10 or more players
         private void UpdateNextGUI()
         {
             listBoxNextGame.Items.Clear();
             listBoxNextGame.Items.AddRange(playerMgr.GetNextPlayersInfo());
             buttonRemove.Enabled = false;
+            if (playerMgr.EnoughPlayers())
+                buttonCalculate.Enabled = true;
+            else buttonCalculate.Enabled = false;
         }
 
         //Get index for highlighted row
@@ -147,8 +157,8 @@ namespace EvenTheTeams
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             DialogResult result = openFileDialog1.ShowDialog();
-            List<Player> players; 
-            if (result == DialogResult.OK) 
+            List<Player> players;
+            if (result == DialogResult.OK)
             {
                 string file = openFileDialog1.FileName;
                 players = FileHandler.OpenFile(file);
@@ -177,11 +187,13 @@ namespace EvenTheTeams
             UpdateGUI();
         }
 
+        //Enalbe Remove button if a player is selected
         private void listBoxNextGame_SelectedIndexChanged(object sender, EventArgs e)
         {
             buttonRemove.Enabled = true;
         }
 
+        //Show contact data in a message bos for selected player
         private void buttonShowContact_Click(object sender, EventArgs e)
         {
             int index = listBoxPlayers.SelectedIndex;
@@ -190,7 +202,7 @@ namespace EvenTheTeams
                 Player player = playerMgr.GetPlayer(index);
                 string strOut = "phone: " + player.ContactData.Phone + "  email: " + player.ContactData.Email;
                 MessageBox.Show(strOut);
-            }           
+            }
         }
     }
 }

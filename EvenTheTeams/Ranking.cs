@@ -18,11 +18,13 @@ namespace EvenTheTeams
         private int losses;
         private int goals;
 
+        //Constructor
         public Ranking()
         {
             Initialize();
         }
 
+        //Set variables to 0
         private void Initialize()
         {
             wins = 0;
@@ -31,6 +33,7 @@ namespace EvenTheTeams
             goals = 0;
         }
 
+        //Constructor
         public Ranking (int wins, int draws, int losses, int goals)
         {
             this.wins = wins;

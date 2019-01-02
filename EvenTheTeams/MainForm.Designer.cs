@@ -31,6 +31,7 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.groupBoxPlayers = new System.Windows.Forms.GroupBox();
+            this.buttonShowContact = new System.Windows.Forms.Button();
             this.buttonRandomizePlayers = new System.Windows.Forms.Button();
             this.labelHeadings = new System.Windows.Forms.Label();
             this.listBoxPlayers = new System.Windows.Forms.ListBox();
@@ -42,7 +43,6 @@
             this.listBoxNextGame = new System.Windows.Forms.ListBox();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonCalculate = new System.Windows.Forms.Button();
-            this.buttonShowContact = new System.Windows.Forms.Button();
             this.groupBoxPlayers.SuspendLayout();
             this.groupBoxNext.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             // 
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(403, 28);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(147, 40);
             this.buttonSave.TabIndex = 3;
@@ -63,7 +63,7 @@
             // 
             this.buttonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLoad.Location = new System.Drawing.Point(230, 28);
-            this.buttonLoad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLoad.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(156, 40);
             this.buttonLoad.TabIndex = 2;
@@ -85,19 +85,29 @@
             this.groupBoxPlayers.Controls.Add(this.buttonAddPlayer);
             this.groupBoxPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxPlayers.Location = new System.Drawing.Point(16, 10);
-            this.groupBoxPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxPlayers.Name = "groupBoxPlayers";
-            this.groupBoxPlayers.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxPlayers.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxPlayers.Size = new System.Drawing.Size(585, 510);
             this.groupBoxPlayers.TabIndex = 1;
             this.groupBoxPlayers.TabStop = false;
             this.groupBoxPlayers.Text = "Players";
             // 
+            // buttonShowContact
+            // 
+            this.buttonShowContact.Location = new System.Drawing.Point(39, 453);
+            this.buttonShowContact.Name = "buttonShowContact";
+            this.buttonShowContact.Size = new System.Drawing.Size(224, 40);
+            this.buttonShowContact.TabIndex = 10;
+            this.buttonShowContact.Text = "Show contact data";
+            this.buttonShowContact.UseVisualStyleBackColor = true;
+            this.buttonShowContact.Click += new System.EventHandler(this.buttonShowContact_Click);
+            // 
             // buttonRandomizePlayers
             // 
             this.buttonRandomizePlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRandomizePlayers.Location = new System.Drawing.Point(230, 84);
-            this.buttonRandomizePlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRandomizePlayers.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRandomizePlayers.Name = "buttonRandomizePlayers";
             this.buttonRandomizePlayers.Size = new System.Drawing.Size(249, 40);
             this.buttonRandomizePlayers.TabIndex = 9;
@@ -108,10 +118,11 @@
             // labelHeadings
             // 
             this.labelHeadings.AutoSize = true;
+            this.labelHeadings.Font = new System.Drawing.Font("Courier New", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelHeadings.Location = new System.Drawing.Point(34, 143);
             this.labelHeadings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelHeadings.Name = "labelHeadings";
-            this.labelHeadings.Size = new System.Drawing.Size(64, 25);
+            this.labelHeadings.Size = new System.Drawing.Size(49, 20);
             this.labelHeadings.TabIndex = 8;
             this.labelHeadings.Text = "Name";
             // 
@@ -121,7 +132,7 @@
             this.listBoxPlayers.FormattingEnabled = true;
             this.listBoxPlayers.ItemHeight = 18;
             this.listBoxPlayers.Location = new System.Drawing.Point(39, 180);
-            this.listBoxPlayers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxPlayers.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxPlayers.Name = "listBoxPlayers";
             this.listBoxPlayers.ScrollAlwaysVisible = true;
             this.listBoxPlayers.Size = new System.Drawing.Size(512, 202);
@@ -132,7 +143,7 @@
             // 
             this.buttonAddToNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddToNext.Location = new System.Drawing.Point(277, 394);
-            this.buttonAddToNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddToNext.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddToNext.Name = "buttonAddToNext";
             this.buttonAddToNext.Size = new System.Drawing.Size(272, 40);
             this.buttonAddToNext.TabIndex = 6;
@@ -144,7 +155,7 @@
             // 
             this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDelete.Location = new System.Drawing.Point(163, 394);
-            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDelete.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(100, 40);
             this.buttonDelete.TabIndex = 5;
@@ -156,7 +167,7 @@
             // 
             this.buttonChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChange.Location = new System.Drawing.Point(36, 394);
-            this.buttonChange.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonChange.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChange.Name = "buttonChange";
             this.buttonChange.Size = new System.Drawing.Size(100, 40);
             this.buttonChange.TabIndex = 4;
@@ -168,7 +179,7 @@
             // 
             this.buttonAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddPlayer.Location = new System.Drawing.Point(25, 54);
-            this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddPlayer.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddPlayer.Name = "buttonAddPlayer";
             this.buttonAddPlayer.Size = new System.Drawing.Size(144, 33);
             this.buttonAddPlayer.TabIndex = 1;
@@ -183,9 +194,9 @@
             this.groupBoxNext.Controls.Add(this.buttonCalculate);
             this.groupBoxNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxNext.Location = new System.Drawing.Point(16, 538);
-            this.groupBoxNext.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNext.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxNext.Name = "groupBoxNext";
-            this.groupBoxNext.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxNext.Padding = new System.Windows.Forms.Padding(4);
             this.groupBoxNext.Size = new System.Drawing.Size(585, 325);
             this.groupBoxNext.TabIndex = 2;
             this.groupBoxNext.TabStop = false;
@@ -197,7 +208,7 @@
             this.listBoxNextGame.FormattingEnabled = true;
             this.listBoxNextGame.ItemHeight = 18;
             this.listBoxNextGame.Location = new System.Drawing.Point(36, 27);
-            this.listBoxNextGame.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxNextGame.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxNextGame.Name = "listBoxNextGame";
             this.listBoxNextGame.Size = new System.Drawing.Size(313, 220);
             this.listBoxNextGame.TabIndex = 8;
@@ -207,7 +218,7 @@
             // 
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRemove.Location = new System.Drawing.Point(36, 264);
-            this.buttonRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRemove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(297, 40);
             this.buttonRemove.TabIndex = 4;
@@ -219,23 +230,13 @@
             // 
             this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCalculate.Location = new System.Drawing.Point(361, 93);
-            this.buttonCalculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCalculate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(188, 38);
             this.buttonCalculate.TabIndex = 3;
             this.buttonCalculate.Text = "Calculate Teams";
             this.buttonCalculate.UseVisualStyleBackColor = true;
             this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
-            // 
-            // buttonShowContact
-            // 
-            this.buttonShowContact.Location = new System.Drawing.Point(39, 453);
-            this.buttonShowContact.Name = "buttonShowContact";
-            this.buttonShowContact.Size = new System.Drawing.Size(224, 40);
-            this.buttonShowContact.TabIndex = 10;
-            this.buttonShowContact.Text = "Show contact data";
-            this.buttonShowContact.UseVisualStyleBackColor = true;
-            this.buttonShowContact.Click += new System.EventHandler(this.buttonShowContact_Click);
             // 
             // MainForm
             // 
@@ -245,7 +246,7 @@
             this.ClientSize = new System.Drawing.Size(603, 876);
             this.Controls.Add(this.groupBoxNext);
             this.Controls.Add(this.groupBoxPlayers);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.Text = "Even the Teams";
             this.groupBoxPlayers.ResumeLayout(false);
