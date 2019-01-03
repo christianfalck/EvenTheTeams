@@ -157,7 +157,6 @@ namespace EvenTheTeams
             }
 
             //Check optional email
-
             if (textBoxEmail.Text != string.Empty)
 
                 if (verification.VerifyEmail(textBoxEmail.Text))
@@ -170,6 +169,7 @@ namespace EvenTheTeams
                     MessageBox.Show("Wrong email format");
                     closeForm = false;
                 }
+
             //Check phone
             if (textBoxPhone.Text != string.Empty)
             {
@@ -185,9 +185,7 @@ namespace EvenTheTeams
             }
         }
 
-
         //Only close form if user says yes to discard data when cancel is chosen
-
         private void AddPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (closeForm)

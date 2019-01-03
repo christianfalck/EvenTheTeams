@@ -13,8 +13,8 @@ namespace EvenTheTeams
     //Has a list of Player
     public partial class PlayerManager
     {
-        private List<Player> players;
-        private List<Player> nextGamePlayers;
+        private List<Player> players; // All available players
+        private List<Player> nextGamePlayers; // Players selected for next game
 
         //Constructor
         public PlayerManager()

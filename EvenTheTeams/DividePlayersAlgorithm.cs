@@ -13,7 +13,7 @@ namespace EvenTheTeams
     /*
      * Takes a number of players and tries to divide these into two even teams
      * The players get 3 points for winning a game and 1 point for a tie. 
-     * Divide by the number of games played
+     * Divide by the number of games played to avoid giving frequent players a benefit
      * 
      * 
      * Thoughts on future algorithms: 
@@ -34,18 +34,6 @@ namespace EvenTheTeams
      */
     class DividePlayersAlgorithm
     {
-
-        // This will be used for the more advanced algorithms, commented out for now
-        /* 
-        private Game[] games;
-        public Game[] Games
-        {
-            set
-            {
-                games = value;
-            }
-        }
-        */
 
         // First team
         private List<Player> team1;
