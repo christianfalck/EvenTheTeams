@@ -76,14 +76,16 @@ namespace EvenTheTeams
 
         private void buttonAddToNext_Click(object sender, EventArgs e)
         {
-            int index = listBoxPlayers.SelectedIndex;
-            if (index >= 0)
-            {
+            foreach (int index in listBoxPlayers.SelectedIndices)
+            { 
+                if (index >= 0)
                 {
-                    playerMgr.AddNextPlayer(index);
-                    UpdateNextGUI();
+                    {
+                        playerMgr.AddNextPlayer(index);
+                        UpdateNextGUI();
+                    }
                 }
-             }
+            }
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
@@ -146,6 +148,8 @@ namespace EvenTheTeams
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "CSV file|*.csv";
+            openFileDialog1.FilterIndex = 1;
             DialogResult result = openFileDialog1.ShowDialog();
             List<Player> players; 
             if (result == DialogResult.OK) 
