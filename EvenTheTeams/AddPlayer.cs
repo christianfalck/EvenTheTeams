@@ -1,8 +1,4 @@
-﻿//Lena Lindblad
-//HT2018-DA204B-88221
-//Project 
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -120,33 +116,6 @@ namespace EvenTheTeams
 
             ok = int.TryParse(textBoxGoals.Text, out value);
             player.RankingData.Goals = value;
-
-            if (textBoxEmail.Text != string.Empty)
-            {
-                if (verification.VerifyEmail(textBoxEmail.Text))
-                {
-                    player.ContactData.Email = textBoxEmail.Text.Trim();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong email format");
-                    closeForm = false;
-                }
-            }
-
-            if (textBoxPhone.Text != string.Empty)
-            {
-                if (verification.VerifyPhoneNumber(textBoxPhone.Text))
-                {
-                    player.ContactData.Phone = textBoxPhone.Text.Trim();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong phone format");
-                    closeForm = false;
-                }
-            }
-
 
         }
 

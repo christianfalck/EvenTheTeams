@@ -1,8 +1,4 @@
-﻿//Lena Lindblad
-//HT2018-DA204B-88221
-//Project 
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,16 +22,13 @@ namespace EvenTheTeams
         //Returns a copy of an element at the position = index
         public Player GetPlayer (int index)
         {
-            Player copyObj = new Player(players[index]);
-            return copyObj;
+            return players[index];
         }
-
 
         //Returns a copy of an element at the position = index
         public Player GetNextPlayer(int index)
         {
-            Player copyObj = new Player(nextGamePlayers[index]);
-            return copyObj;
+            return nextGamePlayers[index];  
         }
 
         //Property for the number

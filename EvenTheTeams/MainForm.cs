@@ -1,8 +1,4 @@
-﻿//Lena Lindblad
-//HT2018-DA204B-88221
-//Project 
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +28,6 @@ namespace EvenTheTeams
             buttonChange.Enabled = false;
             buttonDelete.Enabled = false;
             buttonRemove.Enabled = false;
-            buttonShowContact.Enabled = false;
         }
 
         private void buttonAddPlayer_Click(object sender, EventArgs e)
@@ -40,7 +35,7 @@ namespace EvenTheTeams
             AddPlayer frmPlayer = new AddPlayer();
             if (frmPlayer.ShowDialog() == DialogResult.OK)
             {
-                Player playerObj = new Player(frmPlayer.PlayerData);
+                Player playerObj = frmPlayer.PlayerData; //TODO: Old version copied the Player object (!), make sure this still works.. 
                 playerMgr.AddPlayer(playerObj);
                 UpdateGUI();
             }
@@ -54,7 +49,7 @@ namespace EvenTheTeams
                 AddPlayer frmPlayer = new AddPlayer(playerMgr.GetPlayer(index));
                 if (frmPlayer.ShowDialog() == DialogResult.OK)
                 {
-                    Player playerObj = new Player(frmPlayer.PlayerData);
+                    Player playerObj = frmPlayer.PlayerData; //TODO: Old version copied the Player object (!), make sure this still works.. 
                     bool ok = playerMgr.ChangePlayer(playerObj, index);
                     UpdateGUI();
                 }
@@ -123,7 +118,6 @@ namespace EvenTheTeams
             buttonAddToNext.Enabled = false;
             buttonChange.Enabled = false;
             buttonDelete.Enabled = false;
-            buttonShowContact.Enabled = false;
         }
 
         //Clear listbox and print players
@@ -139,9 +133,18 @@ namespace EvenTheTeams
         {
             int index = listBoxPlayers.SelectedIndex;
             buttonAddToNext.Enabled = true;
-            buttonChange.Enabled = true;
-            buttonDelete.Enabled = true;
-            buttonShowContact.Enabled = true;
+            // Only support Delete and Edit for one object at the time
+            if(listBoxPlayers.SelectedIndices.Count == 1)
+            {
+                buttonChange.Enabled = true;
+                buttonDelete.Enabled = true;
+            }
+            else
+            {
+                buttonChange.Enabled = false;
+                buttonDelete.Enabled = false;
+            }
+            
         }
 
         // Open a file selection window and load players from the selected file
@@ -186,15 +189,5 @@ namespace EvenTheTeams
             buttonRemove.Enabled = true;
         }
 
-        private void buttonShowContact_Click(object sender, EventArgs e)
-        {
-            int index = listBoxPlayers.SelectedIndex;
-            if (index >= 0)
-            {
-                Player player = playerMgr.GetPlayer(index);
-                string strOut = "phone: " + player.ContactData.Phone + "  email: " + player.ContactData.Email;
-                MessageBox.Show(strOut);
-            }           
-        }
     }
 }

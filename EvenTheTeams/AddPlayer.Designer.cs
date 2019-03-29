@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPlayer_FormClosing);
             this.groupBoxAddPlayer = new System.Windows.Forms.GroupBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
@@ -36,43 +35,37 @@
             this.textBoxDraws = new System.Windows.Forms.TextBox();
             this.textBoxLosses = new System.Windows.Forms.TextBox();
             this.textBoxWins = new System.Windows.Forms.TextBox();
-            this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelGoals = new System.Windows.Forms.Label();
             this.labelDraws = new System.Windows.Forms.Label();
             this.labelLoasses = new System.Windows.Forms.Label();
             this.labelWins = new System.Windows.Forms.Label();
-            this.labelPhone = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxRunner = new System.Windows.Forms.CheckBox();
             this.groupBoxAddPlayer.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxAddPlayer
             // 
+            this.groupBoxAddPlayer.Controls.Add(this.checkBoxRunner);
+            this.groupBoxAddPlayer.Controls.Add(this.label1);
             this.groupBoxAddPlayer.Controls.Add(this.buttonCancel);
             this.groupBoxAddPlayer.Controls.Add(this.buttonOK);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxGoals);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxDraws);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxLosses);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxWins);
-            this.groupBoxAddPlayer.Controls.Add(this.textBoxPhone);
-            this.groupBoxAddPlayer.Controls.Add(this.textBoxEmail);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxName);
             this.groupBoxAddPlayer.Controls.Add(this.labelGoals);
             this.groupBoxAddPlayer.Controls.Add(this.labelDraws);
             this.groupBoxAddPlayer.Controls.Add(this.labelLoasses);
             this.groupBoxAddPlayer.Controls.Add(this.labelWins);
-            this.groupBoxAddPlayer.Controls.Add(this.labelPhone);
-            this.groupBoxAddPlayer.Controls.Add(this.labelEmail);
             this.groupBoxAddPlayer.Controls.Add(this.labelName);
             this.groupBoxAddPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAddPlayer.Location = new System.Drawing.Point(31, 15);
-            this.groupBoxAddPlayer.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBoxAddPlayer.Location = new System.Drawing.Point(12, 12);
             this.groupBoxAddPlayer.Name = "groupBoxAddPlayer";
-            this.groupBoxAddPlayer.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxAddPlayer.Size = new System.Drawing.Size(456, 479);
+            this.groupBoxAddPlayer.Size = new System.Drawing.Size(361, 354);
             this.groupBoxAddPlayer.TabIndex = 0;
             this.groupBoxAddPlayer.TabStop = false;
             this.groupBoxAddPlayer.Text = "Add player";
@@ -81,10 +74,9 @@
             // 
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(281, 428);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.Location = new System.Drawing.Point(186, 303);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(136, 43);
+            this.buttonCancel.Size = new System.Drawing.Size(102, 35);
             this.buttonCancel.TabIndex = 15;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -94,10 +86,9 @@
             // 
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.buttonOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOK.Location = new System.Drawing.Point(104, 428);
-            this.buttonOK.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonOK.Location = new System.Drawing.Point(53, 303);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(148, 43);
+            this.buttonOK.Size = new System.Drawing.Size(111, 35);
             this.buttonOK.TabIndex = 14;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -105,146 +96,117 @@
             // 
             // textBoxGoals
             // 
-            this.textBoxGoals.Location = new System.Drawing.Point(104, 365);
-            this.textBoxGoals.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxGoals.Location = new System.Drawing.Point(78, 211);
             this.textBoxGoals.Name = "textBoxGoals";
-            this.textBoxGoals.Size = new System.Drawing.Size(312, 34);
+            this.textBoxGoals.Size = new System.Drawing.Size(235, 29);
             this.textBoxGoals.TabIndex = 13;
             // 
             // textBoxDraws
             // 
-            this.textBoxDraws.Location = new System.Drawing.Point(104, 313);
-            this.textBoxDraws.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDraws.Location = new System.Drawing.Point(78, 168);
             this.textBoxDraws.Name = "textBoxDraws";
-            this.textBoxDraws.Size = new System.Drawing.Size(312, 34);
+            this.textBoxDraws.Size = new System.Drawing.Size(235, 29);
             this.textBoxDraws.TabIndex = 12;
             // 
             // textBoxLosses
             // 
-            this.textBoxLosses.Location = new System.Drawing.Point(104, 263);
-            this.textBoxLosses.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLosses.Location = new System.Drawing.Point(78, 128);
             this.textBoxLosses.Name = "textBoxLosses";
-            this.textBoxLosses.Size = new System.Drawing.Size(312, 34);
+            this.textBoxLosses.Size = new System.Drawing.Size(235, 29);
             this.textBoxLosses.TabIndex = 11;
             // 
             // textBoxWins
             // 
-            this.textBoxWins.Location = new System.Drawing.Point(104, 214);
-            this.textBoxWins.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxWins.Location = new System.Drawing.Point(78, 88);
             this.textBoxWins.Name = "textBoxWins";
-            this.textBoxWins.Size = new System.Drawing.Size(312, 34);
+            this.textBoxWins.Size = new System.Drawing.Size(235, 29);
             this.textBoxWins.TabIndex = 10;
-            // 
-            // textBoxPhone
-            // 
-            this.textBoxPhone.Location = new System.Drawing.Point(104, 161);
-            this.textBoxPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(312, 34);
-            this.textBoxPhone.TabIndex = 9;
-            // 
-            // textBoxEmail
-            // 
-            this.textBoxEmail.Location = new System.Drawing.Point(104, 111);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(312, 34);
-            this.textBoxEmail.TabIndex = 8;
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(104, 60);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxName.Location = new System.Drawing.Point(78, 49);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(312, 34);
+            this.textBoxName.Size = new System.Drawing.Size(235, 29);
             this.textBoxName.TabIndex = 7;
             // 
             // labelGoals
             // 
             this.labelGoals.AutoSize = true;
             this.labelGoals.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGoals.Location = new System.Drawing.Point(23, 372);
-            this.labelGoals.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelGoals.Location = new System.Drawing.Point(17, 216);
             this.labelGoals.Name = "labelGoals";
-            this.labelGoals.Size = new System.Drawing.Size(55, 24);
+            this.labelGoals.Size = new System.Drawing.Size(48, 18);
             this.labelGoals.TabIndex = 6;
-            this.labelGoals.Text = "goals";
+            this.labelGoals.Text = "Goals";
             // 
             // labelDraws
             // 
             this.labelDraws.AutoSize = true;
             this.labelDraws.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDraws.Location = new System.Drawing.Point(23, 320);
-            this.labelDraws.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelDraws.Location = new System.Drawing.Point(17, 174);
             this.labelDraws.Name = "labelDraws";
-            this.labelDraws.Size = new System.Drawing.Size(60, 24);
+            this.labelDraws.Size = new System.Drawing.Size(51, 18);
             this.labelDraws.TabIndex = 5;
-            this.labelDraws.Text = "draws";
+            this.labelDraws.Text = "Draws";
             // 
             // labelLoasses
             // 
             this.labelLoasses.AutoSize = true;
             this.labelLoasses.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelLoasses.Location = new System.Drawing.Point(23, 266);
-            this.labelLoasses.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelLoasses.Location = new System.Drawing.Point(17, 130);
             this.labelLoasses.Name = "labelLoasses";
-            this.labelLoasses.Size = new System.Drawing.Size(63, 24);
+            this.labelLoasses.Size = new System.Drawing.Size(57, 18);
             this.labelLoasses.TabIndex = 4;
-            this.labelLoasses.Text = "losses";
+            this.labelLoasses.Text = "Losses";
             // 
             // labelWins
             // 
             this.labelWins.AutoSize = true;
             this.labelWins.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWins.Location = new System.Drawing.Point(23, 217);
-            this.labelWins.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelWins.Location = new System.Drawing.Point(17, 90);
             this.labelWins.Name = "labelWins";
-            this.labelWins.Size = new System.Drawing.Size(48, 24);
+            this.labelWins.Size = new System.Drawing.Size(42, 18);
             this.labelWins.TabIndex = 3;
-            this.labelWins.Text = "wins";
-            // 
-            // labelPhone
-            // 
-            this.labelPhone.AutoSize = true;
-            this.labelPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPhone.Location = new System.Drawing.Point(23, 164);
-            this.labelPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(65, 24);
-            this.labelPhone.TabIndex = 2;
-            this.labelPhone.Text = "phone";
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEmail.Location = new System.Drawing.Point(23, 113);
-            this.labelEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(55, 24);
-            this.labelEmail.TabIndex = 1;
-            this.labelEmail.Text = "email";
+            this.labelWins.Text = "Wins";
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(23, 63);
-            this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelName.Location = new System.Drawing.Point(17, 51);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(61, 24);
+            this.labelName.Size = new System.Drawing.Size(48, 18);
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Name";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Is a runner";
+            // 
+            // checkBoxRunner
+            // 
+            this.checkBoxRunner.AutoSize = true;
+            this.checkBoxRunner.Location = new System.Drawing.Point(298, 260);
+            this.checkBoxRunner.Name = "checkBoxRunner";
+            this.checkBoxRunner.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRunner.TabIndex = 21;
+            this.checkBoxRunner.UseVisualStyleBackColor = true;
+            // 
             // AddPlayer
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(513, 503);
+            this.ClientSize = new System.Drawing.Size(385, 380);
             this.Controls.Add(this.groupBoxAddPlayer);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddPlayer";
             this.Text = "AddPlayer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPlayer_FormClosing);
             this.groupBoxAddPlayer.ResumeLayout(false);
             this.groupBoxAddPlayer.PerformLayout();
             this.ResumeLayout(false);
@@ -260,15 +222,13 @@
         private System.Windows.Forms.TextBox textBoxDraws;
         private System.Windows.Forms.TextBox textBoxLosses;
         private System.Windows.Forms.TextBox textBoxWins;
-        private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelGoals;
         private System.Windows.Forms.Label labelDraws;
         private System.Windows.Forms.Label labelLoasses;
         private System.Windows.Forms.Label labelWins;
-        private System.Windows.Forms.Label labelPhone;
-        private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.CheckBox checkBoxRunner;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,8 +1,4 @@
-﻿//Christian Falck
-//HT2018-DA204B-88221
-//Project 
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -66,15 +62,13 @@ namespace EvenTheTeams
             team1.Clear();
             team2.Clear();
 
-            // calculate the points for each player: 3p for win, 1p for draw
             var sortedPlayers = new List<KeyValuePair<double, Player>>();
             foreach(Player player in players)
             {
+                // This is only valid if we create the players manually //TODO: If the user loads from CSV and then add one player manually, that player will get score based on this crappy system. Remove it.
                 if(player.Score == 0)
                 {
-                    //This is the case if we load from CSV and calculate score immediately on load
-                    int points = player.RankingData.Wins * 3 + player.RankingData.Draws;
-                    player.Score = points;
+                    player.Score = 1; // We don't support the old algorithm with 3 points for Win, 1 point for draw
                 }
                 
                 sortedPlayers.Add(new KeyValuePair<double, Player>(player.Score, player));

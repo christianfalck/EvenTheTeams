@@ -1,8 +1,4 @@
-﻿//Lena Lindblad
-//HT2018-DA204B-88221
-//Project 
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,8 +10,9 @@ namespace EvenTheTeams
     {
         string name = string.Empty;
         Ranking ranking = new Ranking();
-        ContactData contactData = new ContactData();
         double score = 0;
+        //This variable is a crude first version of the support of skills for players based on the theory that stamina is a crucial factor for success
+        bool isRunner;
 
         //Constructor
         public Player()
@@ -30,17 +27,7 @@ namespace EvenTheTeams
             this.ranking = ranking;
         }
 
-        //Copy Constructor
-        public Player(Player other)
-        {
-            this.name = other.name;
-            this.ranking = other.ranking;
-            this.contactData = other.contactData;
-            this.score = other.score;
-        }
-
         //Properties
-
         public string Name
         {
             get { return name; }
@@ -61,18 +48,7 @@ namespace EvenTheTeams
             }
         }
 
-        public ContactData ContactData
-        {
-            get { return contactData; }
-
-            set
-            {
-                if (value != null)
-                    contactData = value;
-            }
-        }
-
-        // Score is used by the algorithm to divide players into two groups
+         // Score is used by the algorithm to divide players into two groups
         // where the total score of the players in the two groups should be close to eachother
         public double Score
         {

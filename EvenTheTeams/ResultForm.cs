@@ -1,8 +1,4 @@
-﻿//Christian Falck
-//HT2018-DA204B-88221
-//Project 
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,5 +94,6 @@ namespace EvenTheTeams
         {
             UpdateGUI();
         }
+
     }
 }

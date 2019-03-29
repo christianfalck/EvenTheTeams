@@ -31,7 +31,6 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.groupBoxPlayers = new System.Windows.Forms.GroupBox();
-            this.buttonShowContact = new System.Windows.Forms.Button();
             this.buttonRandomizePlayers = new System.Windows.Forms.Button();
             this.labelHeadings = new System.Windows.Forms.Label();
             this.listBoxPlayers = new System.Windows.Forms.ListBox();
@@ -71,7 +70,6 @@
             // 
             // groupBoxPlayers
             // 
-            this.groupBoxPlayers.Controls.Add(this.buttonShowContact);
             this.groupBoxPlayers.Controls.Add(this.buttonRandomizePlayers);
             this.groupBoxPlayers.Controls.Add(this.buttonSave);
             this.groupBoxPlayers.Controls.Add(this.labelHeadings);
@@ -84,21 +82,10 @@
             this.groupBoxPlayers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxPlayers.Location = new System.Drawing.Point(12, 8);
             this.groupBoxPlayers.Name = "groupBoxPlayers";
-            this.groupBoxPlayers.Size = new System.Drawing.Size(665, 414);
+            this.groupBoxPlayers.Size = new System.Drawing.Size(665, 385);
             this.groupBoxPlayers.TabIndex = 1;
             this.groupBoxPlayers.TabStop = false;
             this.groupBoxPlayers.Text = "Players";
-            // 
-            // buttonShowContact
-            // 
-            this.buttonShowContact.Location = new System.Drawing.Point(491, 377);
-            this.buttonShowContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonShowContact.Name = "buttonShowContact";
-            this.buttonShowContact.Size = new System.Drawing.Size(168, 32);
-            this.buttonShowContact.TabIndex = 10;
-            this.buttonShowContact.Text = "Show contact data";
-            this.buttonShowContact.UseVisualStyleBackColor = true;
-            this.buttonShowContact.Click += new System.EventHandler(this.buttonShowContact_Click);
             // 
             // buttonRandomizePlayers
             // 
@@ -183,9 +170,9 @@
             this.groupBoxNext.Controls.Add(this.buttonRemove);
             this.groupBoxNext.Controls.Add(this.buttonCalculate);
             this.groupBoxNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxNext.Location = new System.Drawing.Point(12, 437);
+            this.groupBoxNext.Location = new System.Drawing.Point(12, 399);
             this.groupBoxNext.Name = "groupBoxNext";
-            this.groupBoxNext.Size = new System.Drawing.Size(665, 264);
+            this.groupBoxNext.Size = new System.Drawing.Size(665, 302);
             this.groupBoxNext.TabIndex = 2;
             this.groupBoxNext.TabStop = false;
             this.groupBoxNext.Text = "Next Game";
@@ -197,14 +184,14 @@
             this.listBoxNextGame.ItemHeight = 16;
             this.listBoxNextGame.Location = new System.Drawing.Point(10, 22);
             this.listBoxNextGame.Name = "listBoxNextGame";
-            this.listBoxNextGame.Size = new System.Drawing.Size(649, 196);
+            this.listBoxNextGame.Size = new System.Drawing.Size(649, 228);
             this.listBoxNextGame.TabIndex = 8;
             this.listBoxNextGame.SelectedIndexChanged += new System.EventHandler(this.listBoxNextGame_SelectedIndexChanged);
             // 
             // buttonRemove
             // 
             this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(436, 226);
+            this.buttonRemove.Location = new System.Drawing.Point(432, 264);
             this.buttonRemove.Name = "buttonRemove";
             this.buttonRemove.Size = new System.Drawing.Size(223, 32);
             this.buttonRemove.TabIndex = 4;
@@ -215,7 +202,7 @@
             // buttonCalculate
             // 
             this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCalculate.Location = new System.Drawing.Point(10, 227);
+            this.buttonCalculate.Location = new System.Drawing.Point(6, 265);
             this.buttonCalculate.Name = "buttonCalculate";
             this.buttonCalculate.Size = new System.Drawing.Size(141, 31);
             this.buttonCalculate.TabIndex = 3;
@@ -255,7 +242,6 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.Button buttonRandomizePlayers;
-        private System.Windows.Forms.Button buttonShowContact;
     }
 }
 
