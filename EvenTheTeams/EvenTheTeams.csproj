@@ -52,7 +52,6 @@
     <Compile Include="AddPlayer.Designer.cs">
       <DependentUpon>AddPlayer.cs</DependentUpon>
     </Compile>
-    <Compile Include="ContactData.cs" />
     <Compile Include="DividePlayersAlgorithm.cs" />
     <Compile Include="FileHandler.cs" />
     <Compile Include="InputVerification.cs" />
