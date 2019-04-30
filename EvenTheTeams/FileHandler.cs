@@ -97,29 +97,37 @@ namespace EvenTheTeams
             );
             // First line is the scores
             string[] scores = lines[0].Split(',');
-            double[] calculatedScorePerWin = ScorePerGame(scores);
+            double[] calculatedScoreGame = ScorePerGame(scores);
 
             List<Player> players = new List<Player>();
             for (int index = 1; index < lines.Length; index++)
             {
-                players.Add(ParsePlayerFromCSV(lines[index],calculatedScorePerWin));
+                players.Add(ParsePlayerFromCSV(lines[index], calculatedScoreGame));
             }
             return players;
         }
 
         /*
          * Calculating the score per game 
-         * Each player will get a score for participating = own team goals / other team goals
          * 
+         * Losing team will get [losing team goals / winning team goals] points
+         * Winning team will get [2 - losing team goals / winning team goals] points
+         * 
+         * If any of the teams score 0 goals, both teams will be rewarded 1 goal to avoid dividing with zero. 
+         * 
+         * This algorithm will result in average score = 1. 
+         * 
+         * DEPRECATED ALGORITHM
+         * Using the following algorithm will result in average being > 1 since 10-5 will grant 2 and 0.5 points => Average = 1.25
+         * Each player will get a score for participating = own team goals / other team goals
          * If one of the teams did not do any goals, both teams will be rewarded 1 to avoid 
          * dividing with zero. Open for other suggestions!
-         * 
          * Potential problem: Is a team scoring 14-1 twice as good as a team scoring 14-2? 
          * Ideas for solving: Maximum score. Let's start with using 3 as maximum score. 
          */
         private static double[] ScorePerGame(string[] scores)
         {
-            double[] calculatedScorePerWin = new double[scores.Length]; // goals / opponents goals
+            double[] calculatedScorePerGame = new double[scores.Length]; // goals / opponents goals
             for(int index = 1; index < scores.Length; index++)
             {
                 string score = scores[index];
@@ -130,11 +138,9 @@ namespace EvenTheTeams
                     winningTeamGoals++;
                     losingTeamGoals++;
                 }
-                calculatedScorePerWin[index] =  (double)winningTeamGoals / (double)losingTeamGoals;
-                if (calculatedScorePerWin[index] > 3) calculatedScorePerWin[index] = 3; // max score 3
+                calculatedScorePerGame[index] =  (double)losingTeamGoals / (double)winningTeamGoals;
             }
-
-            return calculatedScorePerWin;
+            return calculatedScorePerGame;
         }
 
         /*
@@ -147,7 +153,7 @@ namespace EvenTheTeams
          * 
          * A player with no games played is given the score of 1 (benefit of doubt)
          */
-        private static Player ParsePlayerFromCSV(string playerData, double[] scores)
+        private static Player ParsePlayerFromCSV(string playerData, double[] scoresForLosing)
         {
             Player player = new Player();
             string[] gamesAttended = playerData.Split(',');
@@ -160,19 +166,19 @@ namespace EvenTheTeams
                 if(gamesAttended[index] == "W")
                 {
                     numberOfGamesPlayed++;
-                    accumulatedScore += scores[index];
+                    accumulatedScore += (2-scoresForLosing[index]); // see comment ScorePerGame
                     rank.Wins++;
                 }
                 else if (gamesAttended[index] == "L")
                 {
                     numberOfGamesPlayed++;
-                    accumulatedScore += (1/scores[index]); // 1/(other/own) = own/other
+                    accumulatedScore += scoresForLosing[index]; // see comment ScorePerGame
                     rank.Losses++;
                 }
                 else if (gamesAttended[index] == "A" || gamesAttended[index] == "B") // Draw
                 {
                     numberOfGamesPlayed++;
-                    accumulatedScore += scores[index]; // should be 1
+                    accumulatedScore += scoresForLosing[index]; // should be 1
                     rank.Draws++;
                 }
             }
