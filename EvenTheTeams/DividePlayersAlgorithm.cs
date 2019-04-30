@@ -65,10 +65,10 @@ namespace EvenTheTeams
             var sortedPlayers = new List<KeyValuePair<double, Player>>();
             foreach(Player player in players)
             {
-                // This is only valid if we create the players manually //TODO: If the user loads from CSV and then add one player manually, that player will get score based on this crappy system. Remove it.
+                // A player should get an average score if we don't have any data
                 if(player.Score == 0)
                 {
-                    player.Score = 1; // We don't support the old algorithm with 3 points for Win, 1 point for draw
+                    player.Score = 1; 
                 }
                 
                 sortedPlayers.Add(new KeyValuePair<double, Player>(player.Score, player));
@@ -104,12 +104,14 @@ namespace EvenTheTeams
         public double GetTeamScore(bool isTeam1)
         {
             double teamScore = 0;
+            int numberOfPlayers = 0;
             if (isTeam1)
             {
                 foreach (Player player in team1)
                 {
                     teamScore += player.Score;
                 }
+                numberOfPlayers = team1.Count;
             }
             else
             {
@@ -117,8 +119,9 @@ namespace EvenTheTeams
                 {
                     teamScore += player.Score;
                 }
+                numberOfPlayers = team2.Count;
             }
-            return teamScore;
+            return Math.Round(teamScore / numberOfPlayers, 3);
         }
 
         // Moving a player from one team to the other. 

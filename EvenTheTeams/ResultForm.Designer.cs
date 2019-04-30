@@ -42,6 +42,10 @@
             this.labelTextCoplayer2 = new System.Windows.Forms.Label();
             this.labelCoplayerTeam1 = new System.Windows.Forms.Label();
             this.labelCoplayerTeam2 = new System.Windows.Forms.Label();
+            this.labelTextRunner1 = new System.Windows.Forms.Label();
+            this.labelTextRunner2 = new System.Windows.Forms.Label();
+            this.labelRunnersTeam1 = new System.Windows.Forms.Label();
+            this.labelRunnersTeam2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelTeam1
@@ -117,9 +121,9 @@
             this.labelTextPoints1.Location = new System.Drawing.Point(23, 372);
             this.labelTextPoints1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTextPoints1.Name = "labelTextPoints1";
-            this.labelTextPoints1.Size = new System.Drawing.Size(136, 18);
+            this.labelTextPoints1.Size = new System.Drawing.Size(129, 18);
             this.labelTextPoints1.TabIndex = 6;
-            this.labelTextPoints1.Text = "Sum points team 1:";
+            this.labelTextPoints1.Text = "Avg points team 1:";
             // 
             // labelTextPoints2
             // 
@@ -128,15 +132,15 @@
             this.labelTextPoints2.Location = new System.Drawing.Point(240, 372);
             this.labelTextPoints2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTextPoints2.Name = "labelTextPoints2";
-            this.labelTextPoints2.Size = new System.Drawing.Size(140, 18);
+            this.labelTextPoints2.Size = new System.Drawing.Size(133, 18);
             this.labelTextPoints2.TabIndex = 7;
-            this.labelTextPoints2.Text = "Sum points team 2: ";
+            this.labelTextPoints2.Text = "Avg points team 2: ";
             // 
             // labelPointsTeam1
             // 
             this.labelPointsTeam1.AutoSize = true;
             this.labelPointsTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.labelPointsTeam1.Location = new System.Drawing.Point(178, 372);
+            this.labelPointsTeam1.Location = new System.Drawing.Point(159, 372);
             this.labelPointsTeam1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPointsTeam1.Name = "labelPointsTeam1";
             this.labelPointsTeam1.Size = new System.Drawing.Size(16, 18);
@@ -147,7 +151,7 @@
             // 
             this.labelPointsTeam2.AutoSize = true;
             this.labelPointsTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.labelPointsTeam2.Location = new System.Drawing.Point(396, 372);
+            this.labelPointsTeam2.Location = new System.Drawing.Point(377, 372);
             this.labelPointsTeam2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPointsTeam2.Name = "labelPointsTeam2";
             this.labelPointsTeam2.Size = new System.Drawing.Size(16, 18);
@@ -180,7 +184,7 @@
             // 
             this.labelCoplayerTeam1.AutoSize = true;
             this.labelCoplayerTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.labelCoplayerTeam1.Location = new System.Drawing.Point(178, 404);
+            this.labelCoplayerTeam1.Location = new System.Drawing.Point(159, 404);
             this.labelCoplayerTeam1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoplayerTeam1.Name = "labelCoplayerTeam1";
             this.labelCoplayerTeam1.Size = new System.Drawing.Size(16, 18);
@@ -191,18 +195,66 @@
             // 
             this.labelCoplayerTeam2.AutoSize = true;
             this.labelCoplayerTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.labelCoplayerTeam2.Location = new System.Drawing.Point(396, 404);
+            this.labelCoplayerTeam2.Location = new System.Drawing.Point(377, 404);
             this.labelCoplayerTeam2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCoplayerTeam2.Name = "labelCoplayerTeam2";
             this.labelCoplayerTeam2.Size = new System.Drawing.Size(16, 18);
             this.labelCoplayerTeam2.TabIndex = 13;
             this.labelCoplayerTeam2.Text = "0";
             // 
+            // labelTextRunner1
+            // 
+            this.labelTextRunner1.AutoSize = true;
+            this.labelTextRunner1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.labelTextRunner1.Location = new System.Drawing.Point(23, 437);
+            this.labelTextRunner1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTextRunner1.Name = "labelTextRunner1";
+            this.labelTextRunner1.Size = new System.Drawing.Size(121, 18);
+            this.labelTextRunner1.TabIndex = 14;
+            this.labelTextRunner1.Text = "Runners team 1: ";
+            // 
+            // labelTextRunner2
+            // 
+            this.labelTextRunner2.AutoSize = true;
+            this.labelTextRunner2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.labelTextRunner2.Location = new System.Drawing.Point(241, 437);
+            this.labelTextRunner2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelTextRunner2.Name = "labelTextRunner2";
+            this.labelTextRunner2.Size = new System.Drawing.Size(121, 18);
+            this.labelTextRunner2.TabIndex = 15;
+            this.labelTextRunner2.Text = "Runners team 2: ";
+            // 
+            // labelRunnersTeam1
+            // 
+            this.labelRunnersTeam1.AutoSize = true;
+            this.labelRunnersTeam1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.labelRunnersTeam1.Location = new System.Drawing.Point(159, 437);
+            this.labelRunnersTeam1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelRunnersTeam1.Name = "labelRunnersTeam1";
+            this.labelRunnersTeam1.Size = new System.Drawing.Size(16, 18);
+            this.labelRunnersTeam1.TabIndex = 16;
+            this.labelRunnersTeam1.Text = "0";
+            // 
+            // labelRunnersTeam2
+            // 
+            this.labelRunnersTeam2.AutoSize = true;
+            this.labelRunnersTeam2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.labelRunnersTeam2.Location = new System.Drawing.Point(377, 437);
+            this.labelRunnersTeam2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelRunnersTeam2.Name = "labelRunnersTeam2";
+            this.labelRunnersTeam2.Size = new System.Drawing.Size(16, 18);
+            this.labelRunnersTeam2.TabIndex = 17;
+            this.labelRunnersTeam2.Text = "0";
+            // 
             // ResultForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 484);
+            this.Controls.Add(this.labelRunnersTeam2);
+            this.Controls.Add(this.labelRunnersTeam1);
+            this.Controls.Add(this.labelTextRunner2);
+            this.Controls.Add(this.labelTextRunner1);
             this.Controls.Add(this.labelCoplayerTeam2);
             this.Controls.Add(this.labelCoplayerTeam1);
             this.Controls.Add(this.labelTextCoplayer2);
@@ -241,5 +293,9 @@
         private System.Windows.Forms.Label labelTextCoplayer2;
         private System.Windows.Forms.Label labelCoplayerTeam1;
         private System.Windows.Forms.Label labelCoplayerTeam2;
+        private System.Windows.Forms.Label labelTextRunner1;
+        private System.Windows.Forms.Label labelTextRunner2;
+        private System.Windows.Forms.Label labelRunnersTeam1;
+        private System.Windows.Forms.Label labelRunnersTeam2;
     }
 }

@@ -62,9 +62,8 @@ namespace EvenTheTeams
             textBoxWins.Text = player.RankingData.Wins.ToString();
             textBoxDraws.Text = player.RankingData.Draws.ToString();
             textBoxLosses.Text = player.RankingData.Losses.ToString();
-            textBoxGoals.Text = player.RankingData.Goals.ToString();          
+            textBoxScore.Text = player.Score.ToString();          
         
-            
             //Move cursor to recipe input box
             this.ActiveControl = textBoxName;
             closeForm = true;
@@ -105,6 +104,7 @@ namespace EvenTheTeams
                 closeForm = false;
             }
 
+            // TODO: Either use the bool or remove it!
             bool ok = int.TryParse(textBoxWins.Text, out value);
             player.RankingData.Wins = value;
 
@@ -114,8 +114,9 @@ namespace EvenTheTeams
             ok = int.TryParse(textBoxLosses.Text, out value);
             player.RankingData.Losses = value;
 
-            ok = int.TryParse(textBoxGoals.Text, out value);
-            player.RankingData.Goals = value;
+            double score;
+            ok = double.TryParse(textBoxScore.Text, out score);
+            player.Score = score;
 
         }
 

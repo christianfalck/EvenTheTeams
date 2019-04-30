@@ -19,7 +19,7 @@ namespace EvenTheTeams
             {
                 const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ"; // All available letters in the name
                 string name = new string(Enumerable.Repeat(chars, 10).Select(s => s[random.Next(s.Length)]).ToArray()); // randomize a name
-                Ranking ranking = new Ranking(random.Next(20), random.Next(20), random.Next(20), random.Next(20)); // randomize ranking
+                Ranking ranking = new Ranking(random.Next(20), random.Next(20), random.Next(20)); // randomize ranking
                 players.Add(new Player(name, ranking));
             }
             return players;
@@ -57,33 +57,32 @@ namespace EvenTheTeams
         // Player data is parsed into a 20-character name and ranking being the rest
         // TODO save as a CSV file instead: That way file loading/saving isn't
         // depending on formatting 
+        // TODO 2: Save the resulting two teams.. the list of players isn't interesting
         private static Player ParsePlayerFromString(string playerString)
         {
             string name = playerString.Substring(0, 20).Trim();
             if (string.IsNullOrEmpty(name)) MessageBox.Show("Error while loading file. No name available.");
-            Ranking ranking = ParseRankingFromString(playerString.Substring(20));
+            Ranking ranking = ParseRankingFromString(playerString.Substring(15));
             return new Player(name, ranking);
         }
 
-        // Ranking is parsed into wins, draws, losses and goals. 
+        // Ranking is parsed into wins, draws and losses. 
         // Each value can be maximum 5 characters in the file
         private static Ranking ParseRankingFromString(string rankingString)
         {
             int wins = 0;
             int draws = 0;
             int losses = 0;
-            int goals = 0;
             try
             {
                 wins = int.Parse(rankingString.Substring(0, 6).Trim());
                 draws = int.Parse(rankingString.Substring(6, 6).Trim());
                 losses = int.Parse(rankingString.Substring(12, 6).Trim());
-                goals = int.Parse(rankingString.Substring(18, 6).Trim());
             } catch(Exception e)
             {
                 MessageBox.Show("Error while loading file. No ranking available.");
             }
-            return new Ranking(wins, draws, losses, goals);
+            return new Ranking(wins, draws, losses);
         }
 
         // Splitting all lines in a file and parsing a Player from each line

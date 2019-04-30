@@ -12,7 +12,6 @@ namespace EvenTheTeams
         private int wins;
         private int draws;
         private int losses;
-        private int goals;
 
         public Ranking()
         {
@@ -24,15 +23,13 @@ namespace EvenTheTeams
             wins = 0;
             draws = 0;
             losses = 0;
-            goals = 0;
         }
 
-        public Ranking (int wins, int draws, int losses, int goals)
+        public Ranking (int wins, int draws, int losses)
         {
             this.wins = wins;
             this.draws = draws;
             this.losses = losses;
-            this.goals = goals;
         }
 
         //Properties
@@ -57,23 +54,16 @@ namespace EvenTheTeams
             set { losses = value; }
         }
 
-        public int Goals
-        {
-            get { return goals; }
-
-            set { goals = value; }
-        }
-
         //A formatted string as heading for the values formatted in the ToString
         public string GetToStringItemsHeadings
         {
-            get { return string.Format("{0,-5} {1,-5} {2,-5} {3,-5}", "wins", "draws", "losses", "goals"); }
+            get { return string.Format("{0,-5} {1,-5} {2,-5}", "wins", "draws", "losses"); }
         }
 
         // Delivers a formatted string with data stored in the object.
         public override string ToString()
         {
-            string strOut = string.Format("{0,-5} {1,-5} {2,-5} {3,-5}", wins ,draws,losses, goals );
+            string strOut = string.Format("{0,-5} {1,-5} {2,-5}", wins ,draws,losses );
             return strOut;
         }
     }

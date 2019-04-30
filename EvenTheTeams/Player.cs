@@ -11,6 +11,7 @@ namespace EvenTheTeams
         string name = string.Empty;
         Ranking ranking = new Ranking();
         double score = 0;
+
         //This variable is a crude first version of the support of skills for players based on the theory that stamina is a crucial factor for success
         bool isRunner;
 
@@ -59,13 +60,13 @@ namespace EvenTheTeams
         //A formatted string as heading for the values formatted in the ToString
         public string GetToStringItemsHeadings
         {
-            get { return string.Format("{0, -20} {1, -40} ", "Name", ranking.GetToStringItemsHeadings); }
+            get { return string.Format("{0, -55} {1, -35} {2, -40} ", "Name", "Score", ranking.GetToStringItemsHeadings); }
         }
 
         // Delivers a formatted string with data stored in the object.
         public override string ToString()
         {
-            string strOut = string.Format(" {0, -20} {1, -40} ", name, ranking.ToString());
+            string strOut = string.Format(" {0, -30} {1, -20} {2, -40} ", name, score, ranking.ToString());
             return strOut;
         }
 

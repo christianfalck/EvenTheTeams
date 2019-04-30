@@ -35,7 +35,7 @@ namespace EvenTheTeams
             AddPlayer frmPlayer = new AddPlayer();
             if (frmPlayer.ShowDialog() == DialogResult.OK)
             {
-                Player playerObj = frmPlayer.PlayerData; //TODO: Old version copied the Player object (!), make sure this still works.. 
+                Player playerObj = frmPlayer.PlayerData;
                 playerMgr.AddPlayer(playerObj);
                 UpdateGUI();
             }
@@ -49,7 +49,7 @@ namespace EvenTheTeams
                 AddPlayer frmPlayer = new AddPlayer(playerMgr.GetPlayer(index));
                 if (frmPlayer.ShowDialog() == DialogResult.OK)
                 {
-                    Player playerObj = frmPlayer.PlayerData; //TODO: Old version copied the Player object (!), make sure this still works.. 
+                    Player playerObj = frmPlayer.PlayerData; 
                     bool ok = playerMgr.ChangePlayer(playerObj, index);
                     UpdateGUI();
                 }

@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
-            this.textBoxGoals = new System.Windows.Forms.TextBox();
+            this.textBoxScore = new System.Windows.Forms.TextBox();
             this.textBoxDraws = new System.Windows.Forms.TextBox();
             this.textBoxLosses = new System.Windows.Forms.TextBox();
             this.textBoxWins = new System.Windows.Forms.TextBox();
@@ -52,7 +52,7 @@
             this.groupBoxAddPlayer.Controls.Add(this.label1);
             this.groupBoxAddPlayer.Controls.Add(this.buttonCancel);
             this.groupBoxAddPlayer.Controls.Add(this.buttonOK);
-            this.groupBoxAddPlayer.Controls.Add(this.textBoxGoals);
+            this.groupBoxAddPlayer.Controls.Add(this.textBoxScore);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxDraws);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxLosses);
             this.groupBoxAddPlayer.Controls.Add(this.textBoxWins);
@@ -113,12 +113,12 @@
             this.buttonOK.UseVisualStyleBackColor = true;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // textBoxGoals
+            // textBoxScore
             // 
-            this.textBoxGoals.Location = new System.Drawing.Point(78, 211);
-            this.textBoxGoals.Name = "textBoxGoals";
-            this.textBoxGoals.Size = new System.Drawing.Size(235, 29);
-            this.textBoxGoals.TabIndex = 13;
+            this.textBoxScore.Location = new System.Drawing.Point(78, 211);
+            this.textBoxScore.Name = "textBoxScore";
+            this.textBoxScore.Size = new System.Drawing.Size(235, 29);
+            this.textBoxScore.TabIndex = 13;
             // 
             // textBoxDraws
             // 
@@ -156,7 +156,7 @@
             this.labelGoals.Name = "labelGoals";
             this.labelGoals.Size = new System.Drawing.Size(48, 18);
             this.labelGoals.TabIndex = 6;
-            this.labelGoals.Text = "Goals";
+            this.labelGoals.Text = "Score";
             // 
             // labelDraws
             // 
@@ -218,7 +218,7 @@
         private System.Windows.Forms.GroupBox groupBoxAddPlayer;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonOK;
-        private System.Windows.Forms.TextBox textBoxGoals;
+        private System.Windows.Forms.TextBox textBoxScore;
         private System.Windows.Forms.TextBox textBoxDraws;
         private System.Windows.Forms.TextBox textBoxLosses;
         private System.Windows.Forms.TextBox textBoxWins;
