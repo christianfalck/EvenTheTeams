@@ -69,7 +69,6 @@
             this.groupBoxAddPlayer.TabIndex = 0;
             this.groupBoxAddPlayer.TabStop = false;
             this.groupBoxAddPlayer.Text = "Add player";
-            this.groupBoxAddPlayer.Enter += new System.EventHandler(this.groupBoxAddPlayer_Enter);
             // 
             // checkBoxRunner
             // 
