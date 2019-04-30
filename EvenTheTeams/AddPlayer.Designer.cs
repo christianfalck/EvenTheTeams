@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBoxAddPlayer = new System.Windows.Forms.GroupBox();
+            this.checkBoxRunner = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
             this.textBoxGoals = new System.Windows.Forms.TextBox();
@@ -41,8 +43,6 @@
             this.labelLoasses = new System.Windows.Forms.Label();
             this.labelWins = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxRunner = new System.Windows.Forms.CheckBox();
             this.groupBoxAddPlayer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,26 @@
             this.groupBoxAddPlayer.TabIndex = 0;
             this.groupBoxAddPlayer.TabStop = false;
             this.groupBoxAddPlayer.Text = "Add player";
+            this.groupBoxAddPlayer.Enter += new System.EventHandler(this.groupBoxAddPlayer_Enter);
+            // 
+            // checkBoxRunner
+            // 
+            this.checkBoxRunner.AutoSize = true;
+            this.checkBoxRunner.Location = new System.Drawing.Point(298, 260);
+            this.checkBoxRunner.Name = "checkBoxRunner";
+            this.checkBoxRunner.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxRunner.TabIndex = 21;
+            this.checkBoxRunner.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 260);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 18);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Is a runner";
             // 
             // buttonCancel
             // 
@@ -178,25 +198,6 @@
             this.labelName.Size = new System.Drawing.Size(48, 18);
             this.labelName.TabIndex = 0;
             this.labelName.Text = "Name";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(17, 260);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 18);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Is a runner";
-            // 
-            // checkBoxRunner
-            // 
-            this.checkBoxRunner.AutoSize = true;
-            this.checkBoxRunner.Location = new System.Drawing.Point(298, 260);
-            this.checkBoxRunner.Name = "checkBoxRunner";
-            this.checkBoxRunner.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxRunner.TabIndex = 21;
-            this.checkBoxRunner.UseVisualStyleBackColor = true;
             // 
             // AddPlayer
             // 

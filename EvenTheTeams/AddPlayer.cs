@@ -119,17 +119,14 @@ namespace EvenTheTeams
 
         }
 
-
         //Only close form if user says yes to discard data when cancel is chosen
-
-            private void AddPlayer_FormClosing(object sender, FormClosingEventArgs e)
+        private void AddPlayer_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (closeForm)
                 e.Cancel = false;  //Close the contact form
             else
                 e.Cancel = true; //Do not close (user has chonsen No)
         }
-                
 
     }
 }
