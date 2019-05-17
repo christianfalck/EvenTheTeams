@@ -70,16 +70,22 @@ namespace EvenTheTeams
         {
             listBoxTeam1.Items.Clear();
             listBoxTeam2.Items.Clear();
+            int RunnersTeam1 = 0;
+            int RunnersTeam2 = 0;
             foreach (Player player in dpa.Team1)
             {
                 listBoxTeam1.Items.Add(player.Name + ": " + player.Score);
+                if (player.IsRunner) RunnersTeam1++;
             }
             foreach (Player player in dpa.Team2)
             {
                 listBoxTeam2.Items.Add(player.Name + ": " + player.Score);
+                if (player.IsRunner) RunnersTeam2++;
             }
             labelPointsTeam1.Text = "" + dpa.GetTeamScore(true);
             labelPointsTeam2.Text = "" + dpa.GetTeamScore(false);
+            labelRunnersTeam1.Text = "" + RunnersTeam1;
+            labelRunnersTeam2.Text = "" + RunnersTeam2;
             UpdateGUI();
         }
 

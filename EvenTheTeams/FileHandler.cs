@@ -127,7 +127,7 @@ namespace EvenTheTeams
         private static double[] ScorePerGame(string[] scores)
         {
             double[] calculatedScorePerGame = new double[scores.Length]; // goals / opponents goals
-            for(int index = 1; index < scores.Length; index++)
+            for(int index = 2; index < scores.Length; index++)
             {
                 string score = scores[index];
                 int winningTeamGoals = int.Parse(score.Substring(0, score.IndexOf('-')).Trim());
@@ -157,10 +157,11 @@ namespace EvenTheTeams
             Player player = new Player();
             string[] gamesAttended = playerData.Split(',');
             player.Name = gamesAttended[0]; // First column is player name
+            player.IsRunner = (gamesAttended[1]=="Y"); // Second column indicates if the player is a runner
             double numberOfGamesPlayed = 0;
             double accumulatedScore = 0;
             Ranking rank = new Ranking();
-            for (int index = 1; index < gamesAttended.Length; index++)
+            for (int index = 2; index < gamesAttended.Length; index++)
             {
                 if(gamesAttended[index] == "W")
                 {

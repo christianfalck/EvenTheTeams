@@ -62,26 +62,50 @@ namespace EvenTheTeams
             team1.Clear();
             team2.Clear();
 
-            var sortedPlayers = new List<KeyValuePair<double, Player>>();
-            foreach(Player player in players)
+            // Two lists: One with runners and the other with non-runners. Divide both lists into the two teams. 
+            var runners = new List<KeyValuePair<double, Player>>();
+            var notrunners = new List<KeyValuePair<double, Player>>();
+            foreach (Player player in players)
             {
                 // A player should get an average score if we don't have any data
                 if(player.Score == 0)
                 {
                     player.Score = 1; 
                 }
-                
-                sortedPlayers.Add(new KeyValuePair<double, Player>(player.Score, player));
+                if(player.IsRunner) runners.Add(new KeyValuePair<double, Player>(player.Score, player));
+                else notrunners.Add(new KeyValuePair<double, Player>(player.Score, player));
+
             }
 
             // sort the list of players based on points
-            sortedPlayers.Sort((x, y) => x.Key.CompareTo(y.Key));
+            runners.Sort((x, y) => x.Key.CompareTo(y.Key));
+            notrunners.Sort((x, y) => x.Key.CompareTo(y.Key));
 
-            // divide the players in 2 equally large teams - using the parity function
-            // First player goes to team 1, then two into team 2, two into team 1, etc. 
+            // Runners: First player goes to team 1, then two into team 2, two into team 1, etc. 
             bool firstteam = true;
             int twoIntoEachTeam = 1; // this is set to 1 the first iteration since only 1 player is sent to team 1
-            foreach (var playerWithPoints in sortedPlayers)
+            foreach (var playerWithPoints in runners)
+            {
+                if (firstteam)
+                {
+                    team1.Add(playerWithPoints.Value);
+                }
+                else
+                {
+                    team2.Add(playerWithPoints.Value);
+                }
+                twoIntoEachTeam--;
+                if (twoIntoEachTeam == 0)
+                {
+                    twoIntoEachTeam = 2;
+                    firstteam = !firstteam;
+                }
+            }
+
+            // Non-runners: First player goes to team 1, then two into team 2, two into team 1, etc. 
+            firstteam = (team1.Count < team2.Count);
+            twoIntoEachTeam = 1; // this is set to 1 the first iteration since only 1 player is sent to team 1
+            foreach (var playerWithPoints in notrunners)
             {
                 if(firstteam)
                 {

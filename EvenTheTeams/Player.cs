@@ -13,7 +13,7 @@ namespace EvenTheTeams
         double score = 0;
 
         //This variable is a crude first version of the support of skills for players based on the theory that stamina is a crucial factor for success
-        bool isRunner;
+        public bool IsRunner { get; set; }
 
         //Constructor
         public Player()
