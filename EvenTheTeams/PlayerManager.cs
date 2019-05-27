@@ -154,5 +154,14 @@ namespace EvenTheTeams
         {
             return (index >= 0) && (index < nextGamePlayers.Count);
         }
+
+        // Sort players based on points
+        public void SortPlayers(bool highestScoreFirst)
+        {
+            if(highestScoreFirst)
+                players.Sort((x, y) => x.Score.CompareTo(y.Score));
+            else
+                players.Sort((x, y) => y.Score.CompareTo(x.Score));
+        }
     }
 }

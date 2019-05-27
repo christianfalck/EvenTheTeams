@@ -14,6 +14,8 @@ namespace EvenTheTeams
     {
         //Instace variables
         private PlayerManager playerMgr = new PlayerManager();
+        private bool sortByPlayerScore = false;
+
         public MainForm()
         {
             InitializeComponent();
@@ -189,5 +191,11 @@ namespace EvenTheTeams
             buttonRemove.Enabled = true;
         }
 
+        private void labelHeadings_Click(object sender, EventArgs e)
+        {
+            sortByPlayerScore = !sortByPlayerScore;
+            playerMgr.SortPlayers(sortByPlayerScore);
+            UpdateGUI();
+        }
     }
 }
